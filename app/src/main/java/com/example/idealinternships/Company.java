@@ -1,7 +1,7 @@
 package com.example.idealinternships;
 
 /**
- * This class stores a company account for Ideal Internships
+ * This class stores a company account for the app Ideal Internships
  * @author baoha_000
  *
  */
