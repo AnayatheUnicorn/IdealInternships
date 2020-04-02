@@ -1,33 +1,42 @@
 package com.example.idealinternships;
 
+import java.util.Date;
+
 public class Student {
     //Data
     private String firstName;
     private String lastName;
-    private String profileBio;//not required
+    private String profileBio;
     private int studentAge;
     private String studentGender;
     private String studentRace;
     private String studentSchool;
     private boolean military;
     private String field;
-    private String location;//not required
-    private String income;//not required
-    //how do we handle preferred dates? do they need to be their own object? might be smart to have a date class
-    //private Date startPreferredDate;
-    //private Date endPreferredDate;
+    private String studentLocation;
+    private String income;
+    private Date startPreferredDate;
+    private Date endPreferredDate;
     private boolean notifications;
 
     //Constructor
-    public Student(String first, String last, int age, String gender, String race, String school, boolean milAssociation,String preferredField){
+    public Student(String first, String last, String bio, int age, String gender, String race, String school,
+                   boolean milAssociation, String preferredField, String location, String income, Date startDate,
+                   Date endDate, boolean push){
         firstName = first;
         lastName = last;
+        profileBio = bio;
         studentAge = age;
         studentGender = gender;
         studentRace = race;
         studentSchool = school;
         military = milAssociation;
         field = preferredField;
+        studentLocation = location;
+        this.income = income;
+        startPreferredDate = startDate;
+        endPreferredDate = endDate;
+        notifications = push;
     }
 
     //Methods
@@ -68,7 +77,7 @@ public class Student {
     }
 
     public void setLocation(String location) {
-        this.location = location;
+        this.studentLocation = location;
     }
 
     public void setIncome(String income) {
@@ -116,7 +125,7 @@ public class Student {
     }
 
     public String getLocation() {
-        return location;
+        return studentLocation;
     }
 
     public String getIncome() {
