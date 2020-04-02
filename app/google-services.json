@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "431056943700",
+    "firebase_url": "https://idealinternships.firebaseio.com",
+    "project_id": "idealinternships",
+    "storage_bucket": "idealinternships.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431056943700:android:f9a0cd22ffb3ab35848bc1",
+        "android_client_info": {
+          "package_name": "com.example.idealinternships"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "431056943700-hq2rgneu2rtsf3vs6uaa4tm5rc62qvov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrnndWLGxehipxQTCqsEsMmAenW62SOUg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "431056943700-hq2rgneu2rtsf3vs6uaa4tm5rc62qvov.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
