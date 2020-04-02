@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Ideal Internships</string>
+    <string name="enterTextStr">Please enter the following information in order to finish setting up your account</string>
+    <string name="enterFirstNameStr">First Name</string>
+    <string name="enterFirstNameHintStr">Enter your first name</string>
+    <string name="enterLastNameStr">Last Name</string>
+    <string name="enterLastNameHintStr">Enter your last name</string>
+    <string name="enterBio">Bio</string>
 </resources>
