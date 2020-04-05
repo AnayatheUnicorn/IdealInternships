@@ -6,4 +6,21 @@
     <string name="enterLastNameStr">Last Name</string>
     <string name="enterLastNameHintStr">Enter your last name</string>
     <string name="enterBio">Bio</string>
+    <string name="nameStr">Name</string>
+    <string name="datesStr">Dates</string>
+    <string name="orGradeStr">or Grade</string>
+    <string name="locationStr">Location</string>
+    <string name="genderStr">Gender</string>
+    <string name="raceStr">Race</string>
+    <string name="incomeStr">Income</string>
+    <string name="militaryStr">Military</string>
+    <string name="paidStr">Paid</string>
+    <string name="picturesStr">Pictures</string>
+    <string name="deadlineStr">Deadline</string>
+    <string name="descriptionStr">Description</string>
+    <string name="prerequisitesStr">Prerequisites</string>
+    <string name="fieldStr">Field</string>
+    <string name="linkToApplicationStr">Link to application</string>
+    <string name="postStr">Post</string>
+
 </resources>
