@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Ideal Internships</string>
     <string name="enterTextStr">Please enter the following information in order to finish setting up your account</string>
-    <string name="uploadAnInternshipStr">Upload an Internship</string>
     <string name="enterFirstNameStr">First Name</string>
     <string name="enterFirstNameHintStr">Enter your first name</string>
     <string name="enterLastNameStr">Last Name</string>
@@ -9,7 +8,6 @@
     <string name="enterBio">Bio</string>
     <string name="nameStr">Name</string>
     <string name="datesStr">Dates</string>
-    <string name="ageStr">Age</string>
     <string name="orGradeStr">or Grade</string>
     <string name="locationStr">Location</string>
     <string name="genderStr">Gender</string>
@@ -24,5 +22,16 @@
     <string name="fieldStr">Field</string>
     <string name="linkToApplicationStr">Link to application</string>
     <string name="postStr">Post</string>
+    <string name="companyNameStr">Company Name</string>
+    <string name="enterCompanyNameStr">Enter company name</string>
+    <string name="companyBioStr">Company Description</string>
+    <string name="enterCompanyBioStr">Enter company description</string>
+    <string name="companyLocationStr">Company Location</string>
+    <string name="enterCompanyLocationStr">Enter company location</string>
+    <string name="companyWebsiteStr">Company Website</string>
+    <string name="enterCompanyWebsiteStr">Enter company website</string>
+    <string name="save">SAVE</string>
+
+
 
 </resources>
