@@ -32,7 +32,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToStudentInfoPage(View v){
+        Intent intent = new Intent(this, StudentEnterInfo.class);
+        startActivity(intent);
+    }
 
+    private void nonsense(){
+        System.out.println("hello world");
+        System.out.println("this is a test");
+
+    }
 
 
 }

@@ -14,10 +14,15 @@ public class StudentEnterInfo extends AppCompatActivity {
         setContentView(R.layout.activity_student_enter_info);
 
         Spinner ageSpinner = findViewById(R.id.ageDropdown);
-
         ArrayAdapter<String> ageAdapter = new ArrayAdapter<String>(StudentEnterInfo.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.ages));
         ageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ageSpinner.setAdapter(ageAdapter);
+
+        Spinner genderSpinner = findViewById(R.id.genderDropdown);
+        ArrayAdapter<String> genderAdapter = new ArrayAdapter<String>(StudentEnterInfo.this,
+                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.gender));
+        genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        genderSpinner.setAdapter(genderAdapter);
     }
 }

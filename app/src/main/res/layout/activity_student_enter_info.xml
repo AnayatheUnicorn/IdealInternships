@@ -86,7 +86,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lastNameTextView" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/enterBio"
         android:layout_width="340dp"
         android:layout_height="164dp"
         android:layout_marginTop="15dp"
@@ -99,7 +99,7 @@
         app:layout_constraintTop_toBottomOf="@+id/enterLastName" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/ageTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -108,7 +108,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/enterBio" />
 
     <Spinner
         android:id="@+id/ageDropdown"
@@ -116,7 +116,28 @@
         android:layout_height="30dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintStart_toEndOf="@+id/ageTextView"
+        app:layout_constraintTop_toBottomOf="@+id/enterBio" />
+
+    <TextView
+        android:id="@+id/genderTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/genderStr"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ageTextView" />
+
+    <Spinner
+        android:id="@+id/genderDropdown"
+        android:layout_width="198dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toEndOf="@+id/genderTextView"
+        app:layout_constraintTop_toBottomOf="@+id/ageDropdown" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

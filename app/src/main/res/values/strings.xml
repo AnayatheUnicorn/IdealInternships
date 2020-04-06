@@ -33,6 +33,7 @@
     <string name="save">SAVE</string>
     <string name="ageStr">Age</string>
     <string name="enterStudentInfoStr">Student Info Form</string>
+    <string name="uploadAnInternshipStr">Upload an Internship</string>
 
     <string-array name="ages">
     <item>--</item>
@@ -46,5 +47,14 @@
     <item>Younger than 13</item>
     <item>Older than 19</item>
     </string-array>
+
+    <string-array name="gender">
+        <item>--</item>
+        <item>Female</item>
+        <item>Male</item>
+        <item>Nonbinary</item>
+        <item>Other</item>
+    </string-array>
+
 
 </resources>
