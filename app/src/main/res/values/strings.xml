@@ -22,5 +22,16 @@
     <string name="fieldStr">Field</string>
     <string name="linkToApplicationStr">Link to application</string>
     <string name="postStr">Post</string>
+    <string name="companyNameStr">Company Name</string>
+    <string name="enterCompanyNameStr">Enter company name</string>
+    <string name="companyBioStr">Company Description</string>
+    <string name="enterCompanyBioStr">Enter company description</string>
+    <string name="companyLocationStr">Company Location</string>
+    <string name="enterCompanyLocationStr">Enter company location</string>
+    <string name="companyWebsiteStr">Company Website</string>
+    <string name="enterCompanyWebsiteStr">Enter company website</string>
+    <string name="save">SAVE</string>
+
+
 
 </resources>
