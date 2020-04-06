@@ -2,6 +2,7 @@ package com.example.idealinternships;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,12 +20,18 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_company_enter_info);
+        setContentView(R.layout.activity_main);
 
         //FirebaseDatabase database = FirebaseDatabase.getInstance();
         //DatabaseReference myRef = database.getReference("test");
 
     }
+
+    public void openStudentInfoForm(View v){
+        Intent intent = new Intent(this, StudentEnterInfo.class);
+        startActivity(intent);
+    }
+
 
 
 

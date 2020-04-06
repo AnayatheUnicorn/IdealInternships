@@ -7,8 +7,19 @@
     <string name="enterLastNameHintStr">Enter your last name</string>
     <string name="enterBio">Bio</string>
     <string name="ageStr">Age</string>
-    
+    <string name="enterStudentInfoStr">Student Info Form</string>
+    <string name="companyNameStr">Company Name</string>
+    <string name="enterCompanyNameStr">Enter company name</string>
+    <string name="companyBioStr">Company Description</string>
+    <string name="enterCompanyBioStr">Enter company description</string>
+    <string name="companyLocationStr">Company Location</string>
+    <string name="enterCompanyLocationStr">Enter company location</string>
+    <string name="companyWebsiteStr">Company Website</string>
+    <string name="enterCompanyWebsiteStr">Enter company website</string>
+    <string name="save">SAVE</string>
+
     <string-array name="ages">
+        <item>--</item>
         <item>13</item>
         <item>14</item>
         <item>15</item>
