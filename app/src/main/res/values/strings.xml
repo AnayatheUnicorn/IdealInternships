@@ -6,8 +6,22 @@
     <string name="enterLastNameStr">Last Name</string>
     <string name="enterLastNameHintStr">Enter your last name</string>
     <string name="enterBio">Bio</string>
-    <string name="ageStr">Age</string>
-    <string name="enterStudentInfoStr">Student Info Form</string>
+    <string name="nameStr">Name</string>
+    <string name="datesStr">Dates</string>
+    <string name="orGradeStr">or Grade</string>
+    <string name="locationStr">Location</string>
+    <string name="genderStr">Gender</string>
+    <string name="raceStr">Race</string>
+    <string name="incomeStr">Income</string>
+    <string name="militaryStr">Military</string>
+    <string name="paidStr">Paid</string>
+    <string name="picturesStr">Pictures</string>
+    <string name="deadlineStr">Deadline</string>
+    <string name="descriptionStr">Description</string>
+    <string name="prerequisitesStr">Prerequisites</string>
+    <string name="fieldStr">Field</string>
+    <string name="linkToApplicationStr">Link to application</string>
+    <string name="postStr">Post</string>
     <string name="companyNameStr">Company Name</string>
     <string name="enterCompanyNameStr">Enter company name</string>
     <string name="companyBioStr">Company Description</string>
@@ -18,16 +32,6 @@
     <string name="enterCompanyWebsiteStr">Enter company website</string>
     <string name="save">SAVE</string>
 
-    <string-array name="ages">
-        <item>--</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
-        <item>19</item>
-        <item>Younger than 13</item>
-        <item>Older than 19</item>
-    </string-array>
+
+
 </resources>

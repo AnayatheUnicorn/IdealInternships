@@ -45,130 +45,258 @@ public class Student {
 
     //Methods
 
+    /**
+     *
+     * @return
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     *
+     * @param firstName
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     *
+     * @param lastName
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getStudentEmail() {
         return studentEmail;
     }
 
+    /**
+     *
+     * @param studentEmail
+     */
     public void setStudentEmail(String studentEmail) {
         this.studentEmail = studentEmail;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     *
+     * @param password
+     */
     public void setPassword(String password) {
         this.password = password;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getProfileBio() {
         return profileBio;
     }
 
+    /**
+     *
+     * @param profileBio
+     */
     public void setProfileBio(String profileBio) {
         this.profileBio = profileBio;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getStudentAge() {
         return studentAge;
     }
 
+    /**
+     *
+     * @param studentAge
+     */
     public void setStudentAge(int studentAge) {
         this.studentAge = studentAge;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getStudentGender() {
         return studentGender;
     }
 
+    /**
+     *
+     * @param studentGender
+     */
     public void setStudentGender(String studentGender) {
         this.studentGender = studentGender;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getStudentRace() {
         return studentRace;
     }
 
+    /**
+     *
+     * @param studentRace
+     */
     public void setStudentRace(String studentRace) {
         this.studentRace = studentRace;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getStudentSchool() {
         return studentSchool;
     }
 
+    /**
+     *
+     * @param studentSchool
+     */
     public void setStudentSchool(String studentSchool) {
         this.studentSchool = studentSchool;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isMilitary() {
         return military;
     }
 
+    /**
+     *
+     * @param military
+     */
     public void setMilitary(boolean military) {
         this.military = military;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getField() {
         return field;
     }
 
+    /**
+     *
+     * @param field
+     */
     public void setField(String field) {
         this.field = field;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getStudentLocation() {
         return studentLocation;
     }
 
+    /**
+     *
+     * @param studentLocation
+     */
     public void setStudentLocation(String studentLocation) {
         this.studentLocation = studentLocation;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getIncome() {
         return income;
     }
 
+    /**
+     *
+     * @param income
+     */
     public void setIncome(String income) {
         this.income = income;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getStartPreferredDate() {
         return startPreferredDate;
     }
 
+    /**
+     *
+     * @param startPreferredDate
+     */
     public void setStartPreferredDate(Date startPreferredDate) {
         this.startPreferredDate = startPreferredDate;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getEndPreferredDate() {
         return endPreferredDate;
     }
 
+    /**
+     *
+     * @param endPreferredDate
+     */
     public void setEndPreferredDate(Date endPreferredDate) {
         this.endPreferredDate = endPreferredDate;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isNotifications() {
         return notifications;
     }
 
+    /**
+     *
+     * @param notifications
+     */
     public void setNotifications(boolean notifications) {
         this.notifications = notifications;
     }
