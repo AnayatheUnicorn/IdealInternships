@@ -13,8 +13,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class CompanyEnterInfoActivity extends AppCompatActivity {
 
-    private Company c;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +23,7 @@ public class CompanyEnterInfoActivity extends AppCompatActivity {
     }
 
     public void saveCompanyInfo(View v){
+        Company c = new Company();
         AutoCompleteTextView companyNameRaw = findViewById(R.id.companyNameEditable);
         c.setName(companyNameRaw.getText().toString());
         EditText companyDescriptionRaw = findViewById(R.id.companyBioEditable);
@@ -34,15 +33,17 @@ public class CompanyEnterInfoActivity extends AppCompatActivity {
         AutoCompleteTextView companyLinkRaw = findViewById(R.id.companyLinkEditable);
         c.setLink(companyLinkRaw.getText().toString());
 
-        //FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //DatabaseReference myRef = database.getReference("companies");
-        //myRef.push().setValue(c);
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference(c.getName());
+        myRef.setValue(c);
 
 
 
 
         //code to open the company home page
-        //startActivity()
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+
     }
 
 }

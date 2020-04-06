@@ -16,22 +16,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/studentInfoButton"
+        android:id="@+id/goToCompanyInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="154dp"
-        android:layout_marginTop="163dp"
-        android:onClick="openStudentInfoForm"
-        android:text="@string/enterStudentInfoStr"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:onClick="goToEnterCompanyInfoPage"
+        android:text="go to enter company info page"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="491dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

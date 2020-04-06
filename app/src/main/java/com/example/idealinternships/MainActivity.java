@@ -27,11 +27,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void openStudentInfoForm(View v){
-        Intent intent = new Intent(this, StudentEnterInfo.class);
+    public void goToEnterCompanyInfoPage(View v){
+        Intent intent = new Intent(this, CompanyEnterInfoActivity.class);
         startActivity(intent);
     }
-
 
 
 
