@@ -36,6 +36,20 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, StudentEnterInfo.class);
         startActivity(intent);
     }
+    private void testMethod(){
+        System.out.println("random");
+        System.out.println("random");
+        System.out.println("random");
+        System.out.println("random");
+        System.out.println("random");
+        System.out.println("random");
+        System.out.println("random");
+        System.out.println("random");
+        System.out.println("random");
+        System.out.println("random");
+        System.out.println("random");
+    }
+
 
     private void nonsense(){
         System.out.println("hello world");
