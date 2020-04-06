@@ -31,7 +31,20 @@
     <string name="companyWebsiteStr">Company Website</string>
     <string name="enterCompanyWebsiteStr">Enter company website</string>
     <string name="save">SAVE</string>
+    <string name="ageStr">Age</string>
+    <string name="enterStudentInfoStr">Student Info Form</string>
 
-
+    <string-array name="ages">
+    <item>--</item>
+    <item>13</item>
+    <item>14</item>
+    <item>15</item>
+    <item>16</item>
+    <item>17</item>
+    <item>18</item>
+    <item>19</item>
+    <item>Younger than 13</item>
+    <item>Older than 19</item>
+    </string-array>
 
 </resources>
