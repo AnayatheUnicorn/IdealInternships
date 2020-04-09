@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".CompanyEnterInfoActivity"></activity>
+        <activity android:name=".UploadInternship"></activity>
         <activity android:name=".StudentEnterInfo"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
