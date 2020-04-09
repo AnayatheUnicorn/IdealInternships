@@ -5,7 +5,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".Upload_Internship">
+    tools:context=".UploadInternship">
 
     <ScrollView
         android:id="@+id/uploadInternshipsScroll"
@@ -94,7 +94,8 @@
                     android:id="@+id/ageList"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:entries="@array/ages" />
 
             </LinearLayout>
 
