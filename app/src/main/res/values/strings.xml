@@ -5,6 +5,7 @@
     <string name="enterFirstNameHintStr">Enter your first name</string>
     <string name="enterLastNameStr">Last Name</string>
     <string name="enterLastNameHintStr">Enter your last name</string>
+    <string name="uploadAnInternshipStr">Upload an Internship</string>
     <string name="enterBio">Bio</string>
     <string name="nameStr">Name</string>
     <string name="datesStr">Dates</string>
@@ -33,7 +34,8 @@
     <string name="save">SAVE</string>
     <string name="ageStr">Age</string>
     <string name="enterStudentInfoStr">Student Info Form</string>
-    <string name="uploadAnInternshipStr">Upload an Internship</string>
+    <string name="enterCompanyInfoStr">Enter Company Info</string>
+
 
     <string-array name="ages">
     <item>--</item>
