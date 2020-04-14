@@ -45,11 +45,22 @@
         app:layout_constraintTop_toBottomOf="@+id/goToCompanyInfo" />
 
     <Button
+        android:id="@+id/goToMyAccCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:onClick="goToMyAccCompanyPage"
+        android:text="@string/goToMyAccCompany"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goToUploadInternship" />
+
+    <Button
         android:id="@+id/goToUploadInternship"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:onClick="goToUploadInternshipPage"
+        android:onClick="goToUploadAnInternship"
         android:text="@string/uploadAnInternshipStr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

@@ -34,22 +34,32 @@
     <string name="save">SAVE</string>
     <string name="ageStr">Age</string>
     <string name="enterStudentInfoStr">Student Info Form</string>
+    <string name="uploadStr">Upload</string>
+    <string name="manageStr">Manage</string>
+    <string name="myAccStr">My Account</string>
     <string name="enterCompanyInfoStr">Enter Company Info</string>
+    <string name = "goToMyAccCompany">go to my acc company</string>
 
 
+    <string name="title_activity_company_account">CompanyAccount</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_company_posted_internships">CompanyPostedInternshipsActivity
+    </string>
     <string-array name="ages">
-    <item>--</item>
-    <item>13</item>
-    <item>14</item>
-    <item>15</item>
-    <item>16</item>
-    <item>17</item>
-    <item>18</item>
-    <item>19</item>
-    <item>Younger than 13</item>
-    <item>Older than 19</item>
+        <item>--</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>Younger than 13</item>
+        <item>Older than 19</item>
     </string-array>
-
     <string-array name="gender">
         <item>--</item>
         <item>Female</item>

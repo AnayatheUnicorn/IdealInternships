@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_upload_company"
+        android:icon="@drawable/ic_file_upload_black_24dp"
+        android:title="@string/uploadStr"/>
+
+    <item
+        android:id="@+id/nav_uploaded_internships_company"
+        android:icon="@drawable/ic_folder_black_24dp"
+        android:title="@string/manageStr"/>
+
+    <item
+        android:id="@+id/nav_my_acc_company"
+        android:icon="@drawable/ic_account_circle_black_24dp"
+        android:title="@string/myAccStr"/>
+
+
+</menu>
