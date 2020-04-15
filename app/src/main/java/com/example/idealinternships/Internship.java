@@ -154,17 +154,17 @@ public class Internship {
 	 * 	with a proper URL stored in its link String attribute
 	 */
 	public URL learnMore(){
-		if(getCompany() == null || getCompany().getLink() == "" ){
+		if(getCompany() == null || getCompany().getLink().equals("")){
 			return null;
 		} else {
+			URL url = null;
 			try {
-				URL url = new URL(getCompany().getLink());
-				return url;
+				url = new URL(getCompany().getLink());
 			} catch (MalformedURLException e) {
 				e.printStackTrace();
 			}
+			return url;
 		}
-		return null;
 	}
 
 }
