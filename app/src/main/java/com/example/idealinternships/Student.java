@@ -6,10 +6,10 @@ public class Student {
     //Data
     private String firstName;
     private String lastName;
-    private String studentEmail;
-    private String password;
+    //private String studentEmail;
+    //private String password;
     private String profileBio;
-    private int studentAge;
+    private String studentAge;
     private String studentGender;
     private String studentRace;
     private String studentSchool;
@@ -22,13 +22,15 @@ public class Student {
     private boolean notifications;
 
     //Constructor
-    public Student(String first, String last, String email, String pass, String bio, int age, String gender, String race,
+    //String email, String pass (to add in later)
+
+    public Student(String first, String last, String bio, String age, String gender, String race,
                    String school, boolean milAssociation, String preferredField, String location, String income, Date startDate,
                    Date endDate, boolean push){
         firstName = first;
         lastName = last;
-        studentEmail = email;
-        password = pass;
+        //studentEmail = email;
+        //password = pass;
         profileBio = bio;
         studentAge = age;
         studentGender = gender;
@@ -81,33 +83,25 @@ public class Student {
      *
      * @return
      */
-    public String getStudentEmail() {
-        return studentEmail;
-    }
+    //public String getStudentEmail() {return studentEmail;}
 
     /**
      *
      * @param studentEmail
      */
-    public void setStudentEmail(String studentEmail) {
-        this.studentEmail = studentEmail;
-    }
+    //public void setStudentEmail(String studentEmail) {this.studentEmail = studentEmail;}
 
     /**
      *
      * @return
      */
-    public String getPassword() {
-        return password;
-    }
+    //public String getPassword() {return password;}
 
     /**
      *
      * @param password
      */
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    //public void setPassword(String password) {this.password = password;}
 
     /**
      *
@@ -129,7 +123,7 @@ public class Student {
      *
      * @return
      */
-    public int getStudentAge() {
+    public String getStudentAge() {
         return studentAge;
     }
 
@@ -137,7 +131,7 @@ public class Student {
      *
      * @param studentAge
      */
-    public void setStudentAge(int studentAge) {
+    public void setStudentAge(String studentAge) {
         this.studentAge = studentAge;
     }
 
