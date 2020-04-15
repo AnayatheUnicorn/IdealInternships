@@ -40,6 +40,14 @@
     <string name="enterCompanyInfoStr">Enter Company Info</string>
     <string name = "goToMyAccCompany">go to my acc company</string>
 
+    <string name="schoolStr">School</string>
+    <string name="enterSchoolHintStr">Enter your school</string>
+    <string name="militaryAssociationStr">Military Association</string>
+    <string name="enterLocationStr">Enter your location</string>
+    <string name="preferredDatesStr">Preferred Dates</string>
+    <string name="pushNotificationsStr">Push Notifications</string>
+    <string name="startStr">Start</string>
+    <string name="endStr">End</string>
 
     <string name="title_activity_company_account">CompanyAccount</string>
 
@@ -49,16 +57,16 @@
     <string name="title_activity_company_posted_internships">CompanyPostedInternshipsActivity
     </string>
     <string-array name="ages">
-        <item>--</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
-        <item>19</item>
-        <item>Younger than 13</item>
-        <item>Older than 19</item>
+    <item>--</item>
+    <item>13</item>
+    <item>14</item>
+    <item>15</item>
+    <item>16</item>
+    <item>17</item>
+    <item>18</item>
+    <item>19</item>
+    <item>Younger than 13</item>
+    <item>Older than 19</item>
     </string-array>
     <string-array name="gender">
         <item>--</item>
@@ -66,6 +74,46 @@
         <item>Male</item>
         <item>Nonbinary</item>
         <item>Other</item>
+    </string-array>
+
+    <string-array name="races">
+        <item>--</item>
+        <item>White/Caucasian</item>
+        <item>Black/African American</item>
+        <item>Native American or Alaska Native</item>
+        <item>Asian/Pacific Islander</item>
+        <item>Multiracial</item>
+    </string-array>
+
+    <string-array name="fields">
+        <item>--</item>
+        <item>Biology</item>
+        <item>Chemistry</item>
+        <item>Engineering</item>
+        <item>Physics</item>
+        <item>Computer Science</item>
+        <item>Music</item>
+        <item>Art</item>
+        <item>Theatre</item>
+        <item>Environmental Science</item>
+        <item>Neuroscience</item>
+        <item>Medicine</item>
+        <item>Writing</item>
+        <item>Business</item>
+        <item>Government/Politics</item>
+        <item>Marketing</item>
+        <item>Math</item>
+    </string-array>
+
+    <string-array name="incomes">
+        <item>--</item>
+        <item>less than $9,700</item>
+        <item>$9,700 - $40,000</item>
+        <item>$40,000 - $84,000</item>
+        <item>$84,000 - $160,000</item>
+        <item>$160,000- $204,000</item>
+        <item>$204,000 - $510,000</item>
+        <item>More than $510,000</item>
     </string-array>
 
 
