@@ -67,7 +67,8 @@
                 android:id="@+id/endDateLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/endStr" />
+                android:text="@string/endStr"
+                android:textStyle="bold" />
 
             <CalendarView
                 android:id="@+id/internshipEndCalendar"
@@ -200,7 +201,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/paidStr" />
+                    android:text="@string/paidStr"
+                    android:textStyle="bold" />
 
                 <Switch
                     android:id="@+id/paidSwitch"
@@ -214,7 +216,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/paidStr"
+                android:text="@string/costStr"
                 android:textStyle="bold" />
 
             <EditText
@@ -259,7 +261,8 @@
                 android:id="@+id/descriptionLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/descriptionStr" />
+                android:text="@string/descriptionStr"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/descriptionText"
@@ -274,7 +277,8 @@
                 android:id="@+id/prerequisitesLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/prerequisitesStr" />
+                android:text="@string/prerequisitesStr"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/prerequisitesText"
@@ -289,7 +293,8 @@
                 android:id="@+id/fieldLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/fieldStr" />
+                android:text="@string/fieldStr"
+                android:textStyle="bold" />
 
             <Spinner
                 android:id="@+id/fieldList"
@@ -301,7 +306,8 @@
                 android:id="@+id/linkToApplicaitonLinkLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/linkToApplicationStr" />
+                android:text="@string/linkToApplicationStr"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/linkToApplicationText"
@@ -316,6 +322,7 @@
                 android:id="@+id/postButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="postInternship"
                 android:text="@string/postStr" />
 
         </LinearLayout>
