@@ -294,4 +294,13 @@ public class Student {
     public void setNotifications(boolean notifications) {
         this.notifications = notifications;
     }
+
+    public String toString(){
+        String student = new String(firstName + " " + lastName + " Bio: " + profileBio + " Age: "
+                + studentAge + " Gender: " + studentGender + " Race: " + studentRace + " School: " + studentSchool
+                + " Mil: " + military + " Field: " + field + " Location: " + studentLocation + " Income: " +
+                income + " Start Date: " + startPreferredDate + " End Date: " + endPreferredDate + " Push: " +
+                notifications);
+        return student;
+    }
 }

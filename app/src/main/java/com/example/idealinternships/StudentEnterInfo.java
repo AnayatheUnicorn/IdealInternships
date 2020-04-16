@@ -6,11 +6,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.Date;
 
 public class StudentEnterInfo extends AppCompatActivity {
@@ -52,9 +58,26 @@ public class StudentEnterInfo extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.incomes));
         incomeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         incomeSpinner.setAdapter(incomeAdapter);
+
+        CalendarView startDateField = findViewById(R.id.beginDateCalendar);
+        startDateField.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                startDate = new Date(year-1900, month, dayOfMonth);
+                Log.d("start date:", "year: " + year + " month: " + month + " day: " + dayOfMonth);
+            }
+        });
+
+        CalendarView endDateField = findViewById(R.id.endDateCalendar);
+        endDateField.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                endDate = new Date(year-1900, month, dayOfMonth);
+            }
+        });
     }
 
-    public void saveStudentInfo(){
+    public void saveStudentInfo(View v){
         EditText firstNameField = findViewById(R.id.enterfirstName);
         String stuFirst = firstNameField.getText().toString();
 
@@ -88,27 +111,16 @@ public class StudentEnterInfo extends AppCompatActivity {
         Spinner incomeSpinner = findViewById(R.id.incomeDropdown);
         String stuIncome = incomeSpinner.getSelectedItem().toString();
 
-        CalendarView startDateField = findViewById(R.id.beginDateCalendar);
-        startDateField.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                startDate = new Date(year, month, dayOfMonth);
-                Log.d("start date:", "year: " + year + " month: " + month + " day: " + dayOfMonth);
-            }
-        });
-
-        CalendarView endDateField = findViewById(R.id.endDateCalendar);
-        endDateField.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                endDate = new Date(year, month, dayOfMonth);
-            }
-        });
-
         Switch notificationSwitch = findViewById(R.id.notificationsSwitch);
         Boolean stuNotifications = notificationSwitch.isChecked();
 
         Student s = new Student(stuFirst, stuLast, stuBio, stuAge, stuGender, stuRace, stuSchool, stuMilitary,
                 stuField, stuLocation, stuIncome, startDate, endDate, stuNotifications);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference(s.getLastName() + ", " + s.getFirstName());
+        myRef.setValue(s);
+
+        //Toast.makeText(this, s.toString(), Toast.LENGTH_SHORT).show();
     }
 }
