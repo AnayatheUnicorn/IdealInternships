@@ -31,184 +31,141 @@
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
-            <LinearLayout
-                android:id="@+id/nameLine"
+            <TextView
+                android:id="@+id/nameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/nameStr"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/inputName"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/enterInternshipNameStr"
+                android:inputType="textPersonName"
+                android:autofillHints="" />
 
-                <TextView
-                    android:id="@+id/nameLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/nameStr"
-                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/startDateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/startStr"
+                android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/inputName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="textPersonName" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/datesLine"
+            <CalendarView
+                android:id="@+id/internshipStartDateCalendar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
-                <TextView
-                    android:id="@+id/datesLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/datesStr"
-                    android:textStyle="bold" />
-
-                <CalendarView
-                    android:id="@+id/calendarView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/ageLine"
+            <TextView
+                android:id="@+id/endDateLabel"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:text="@string/endStr" />
 
-                <TextView
-                    android:id="@+id/ageLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/ageStr"
-                    android:textStyle="bold" />
-
-                <Spinner
-                    android:id="@+id/ageList"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:entries="@array/ages" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/orGradeLine"
+            <CalendarView
+                android:id="@+id/internshipEndCalendar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content" />
 
-                <TextView
-                    android:id="@+id/gradeLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/orGradeStr"
-                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/ageLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ageStr"
+                android:textStyle="bold" />
 
-                <Spinner
-                    android:id="@+id/gradeList"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/locationLine"
+            <Spinner
+                android:id="@+id/ageList"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/ages" />
 
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/locationStr"
-                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/gradeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/orGradeStr"
+                android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/editText6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="textPersonName" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/genderLine"
+            <Spinner
+                android:id="@+id/gradeList"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/grade" />
 
-                <TextView
-                    android:id="@+id/genderLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/genderStr"
-                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/locationLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/locationStr"
+                android:textStyle="bold" />
 
-                <Spinner
-                    android:id="@+id/genderList"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/raceLine"
+            <EditText
+                android:id="@+id/locationText"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/enterCompanyLocationStr"
+                android:inputType="textPersonName"
+                android:autofillHints="" />
 
-                <TextView
-                    android:id="@+id/raceLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/raceStr"
-                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/genderLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/genderStr"
+                android:textStyle="bold" />
 
-                <Spinner
-                    android:id="@+id/raceList"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/incomeLine"
+            <Spinner
+                android:id="@+id/genderList"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/gender" />
 
-                <TextView
-                    android:id="@+id/incomeLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/incomeStr"
-                    android:textStyle="bold" />
+            <TextView
+                android:id="@+id/raceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/raceStr"
+                android:textStyle="bold" />
 
-                <Spinner
-                    android:id="@+id/incomeList"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+            <Spinner
+                android:id="@+id/raceList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/races" />
 
-            </LinearLayout>
+            <TextView
+                android:id="@+id/incomeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/incomeStr"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/incomeList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/incomes" />
 
             <LinearLayout
                 android:id="@+id/militaryLine"
@@ -217,7 +174,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView11"
+                    android:id="@+id/militaryLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -225,10 +182,11 @@
                     android:textStyle="bold" />
 
                 <Switch
-                    android:id="@+id/switch1"
+                    android:id="@+id/militarySwitch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -238,66 +196,64 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/paidLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/paidStr"
-                    android:textStyle="bold" />
+                    android:text="@string/paidStr" />
 
-                <EditText
-                    android:id="@+id/editText11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="textPersonName" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/picutresLine"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/picturesStr"
-                    android:textStyle="bold" />
-
-                <EditText
-                    android:id="@+id/editText12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="textPersonName" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/deadlineLine"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/deadlineStr"
-                    android:textStyle="bold" />
-
-                <CalendarView
-                    android:id="@+id/calendarView2"
+                <Switch
+                    android:id="@+id/paidSwitch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
-
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/costLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/paidStr"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/costText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:ems="10"
+                android:hint="@string/enterInternshipCostStr"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/pictureLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/picturesStr"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/uploadPictureButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/uploadAPhotoStr" />
+
+            <TextView
+                android:id="@+id/deadlineLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/deadlineStr"
+                android:textStyle="bold" />
+
+            <CalendarView
+                android:id="@+id/applicationDeadlineCalendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/descriptionLabel"
@@ -310,7 +266,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:hint="@string/enterDescriptionStr"
+                android:inputType="textPersonName"
+                android:autofillHints="" />
 
             <TextView
                 android:id="@+id/prerequisitesLabel"
@@ -323,7 +281,42 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:hint="@string/enterPrerequisitesStr"
+                android:inputType="textPersonName"
+                android:autofillHints="" />
+
+            <TextView
+                android:id="@+id/fieldLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fieldStr" />
+
+            <Spinner
+                android:id="@+id/fieldList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/fields" />
+
+            <TextView
+                android:id="@+id/linkToApplicaitonLinkLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/linkToApplicationStr" />
+
+            <EditText
+                android:id="@+id/linkToApplicationText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/enterAnApplicationLinkStr"
+                android:inputType="textPersonName"
+                android:autofillHints="" />
+
+            <Button
+                android:id="@+id/postButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/postStr" />
 
         </LinearLayout>
     </ScrollView>
