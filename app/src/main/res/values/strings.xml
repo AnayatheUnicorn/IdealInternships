@@ -6,6 +6,8 @@
     <string name="enterLastNameStr">Last Name</string>
     <string name="enterLastNameHintStr">Enter your last name</string>
     <string name="uploadAnInternshipStr">Upload an Internship</string>
+    <string name="enterInternshipNameStr">Enter the name of the internship</string>
+    <string name="enterInternshipCostStr">Enter internship cost</string>
     <string name="enterBio">Bio</string>
     <string name="nameStr">Name</string>
     <string name="datesStr">Dates</string>
@@ -13,15 +15,20 @@
     <string name="locationStr">Location</string>
     <string name="genderStr">Gender</string>
     <string name="raceStr">Race</string>
-    <string name="incomeStr">Income</string>
+    <string name="incomeStr">Target Income</string>
     <string name="militaryStr">Military</string>
     <string name="paidStr">Paid</string>
+    <string name="costStr">Cost</string>
     <string name="picturesStr">Pictures</string>
     <string name="deadlineStr">Deadline</string>
     <string name="descriptionStr">Description</string>
+    <string name="enterDescriptionStr">Enter a description</string>
     <string name="prerequisitesStr">Prerequisites</string>
+    <string name="enterPrerequisitesStr">Enter prerequisites</string>
     <string name="fieldStr">Field</string>
+    <string name="uploadAPhotoStr">Upload a Photo</string>
     <string name="linkToApplicationStr">Link to application</string>
+    <string name="enterAnApplicationLinkStr">Enter an application link</string>
     <string name="postStr">Post</string>
     <string name="companyNameStr">Company Name</string>
     <string name="enterCompanyNameStr">Enter company name</string>
@@ -67,6 +74,7 @@
     <item>19</item>
     <item>Younger than 13</item>
     <item>Older than 19</item>
+        <item>N/A</item>
     </string-array>
     <string-array name="gender">
         <item>--</item>
@@ -76,6 +84,15 @@
         <item>Other</item>
     </string-array>
 
+    <string-array name="grade">
+        <item>--</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>N/A</item>
+    </string-array>
+
     <string-array name="races">
         <item>--</item>
         <item>White/Caucasian</item>
@@ -83,6 +100,7 @@
         <item>Native American or Alaska Native</item>
         <item>Asian/Pacific Islander</item>
         <item>Multiracial</item>
+        <item>N/A</item>
     </string-array>
 
     <string-array name="fields">
@@ -114,6 +132,7 @@
         <item>$160,000- $204,000</item>
         <item>$204,000 - $510,000</item>
         <item>More than $510,000</item>
+        <item>N/A</item>
     </string-array>
 
 
