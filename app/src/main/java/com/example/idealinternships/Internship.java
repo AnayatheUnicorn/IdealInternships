@@ -1,4 +1,5 @@
-package com.example.idealinternships; /**
+package com.example.idealinternships;
+/**
  * This class stores information for a single internship.
  * @author Maxi Attiogbe 
  *
@@ -10,6 +11,7 @@ import java.util.Date;
 
 public class Internship {
 	//Data
+    private String name;
 	private Date applicationDeadline;
 	private Date startDate;
 	private Date endDate;
@@ -23,6 +25,7 @@ public class Internship {
 	 * start date, end date, company, cost, or additional information
 	 */
 	public Internship() {
+	    name = "";
 		applicationDeadline = null;
 		startDate = null;
 		endDate = null;
@@ -34,15 +37,17 @@ public class Internship {
 	/**
 	 * Constructs an Internship object with  a given application deadline,
 	 * 	start date, end date, company, cost, and additional information
-	 * @param applicationDeadline the given application deadline
+     * 	@param name the name of the internship
+     * @param applicationDeadline the given application deadline
 	 * @param startDate the given start date
 	 * @param endDate the given end date
 	 * @param company the company hosting the internship
 	 * @param cost the cost
 	 * @param additionalInfo additional information about the internship for easier sorting and searching
 	 */
-	public Internship(Date applicationDeadline, Date startDate, Date endDate, Company company, int cost, ArrayList<Information> additionalInfo ) {
-		this.applicationDeadline = applicationDeadline;
+	public Internship(String name, Date applicationDeadline, Date startDate, Date endDate, Company company, double cost, ArrayList<Information> additionalInfo ) {
+		this.name = name;
+	    this.applicationDeadline = applicationDeadline;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.company = company;
@@ -51,97 +56,113 @@ public class Internship {
 	}
 	//Methods
 
+    /**
+     * Get the name of the internship
+     * @return the name of the internship
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Set the name of the internship
+     * @param name the name of the internship
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
 	/**
-	 *
-	 * @return
+	 * Get the application deadline of the internship
+	 * @return the application deadline of the internship
 	 */
 	public Date getApplicationDeadline() {
 		return applicationDeadline;
 	}
 
 	/**
-	 *
-	 * @param applicationDeadline
+	 * Set the application deadline of the internship
+	 * @param applicationDeadline the application deadline of the internship
 	 */
 	public void setApplicationDeadline(Date applicationDeadline) {
 		this.applicationDeadline = applicationDeadline;
 	}
 
 	/**
-	 *
-	 * @return
+	 * Get the start date of the internship
+	 * @return the start date of the internship
 	 */
 	public Date getStartDate() {
 		return startDate;
 	}
 
 	/**
-	 *
-	 * @param startDate
+	 * Set the start date of the internship
+	 * @param startDate the start date of the internship
 	 */
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
 
 	/**
-	 *
-	 * @return
+	 * Get the end date of the internship
+	 * @return the end date of the internship
 	 */
 	public Date getEndDate() {
 		return endDate;
 	}
 
 	/**
-	 *
-	 * @param endDate
+	 * Set the end date of the internship
+	 * @param endDate the end date of the internship
 	 */
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
 
 	/**
-	 *
-	 * @return
+	 * Get the company hosting the internship
+	 * @return the company hosting the internship
 	 */
 	public Company getCompany() {
 		return company;
 	}
 
 	/**
-	 *
-	 * @param company
+	 * Set the company hosting the internship
+	 * @param company the company hosting the internship
 	 */
 	public void setCompany(Company company) {
 		this.company = company;
 	}
 
 	/**
-	 *
-	 * @return
+	 * Get the cost of the internship
+	 * @return the cost of the internship
 	 */
 	public double getCost() {
 		return cost;
 	}
 
 	/**
-	 *
-	 * @param cost
+	 * Set the cost of the internship
+	 * @param cost the cost of the internship
 	 */
 	public void setCost(double cost) {
 		this.cost = cost;
 	}
 
 	/**
-	 *
-	 * @return
+	 * Get additional information about the internship
+	 * @return Get the cost of the internship
 	 */
 	public ArrayList<Information> getAdditionalInfo() {
 		return additionalInfo;
 	}
 
 	/**
-	 *
-	 * @param additionalInfo
+	 * Set additional information about the internship
+	 * @param additionalInfo additional information about the internship
 	 */
 	public void setAdditionalInfo(ArrayList<Information> additionalInfo) {
 		this.additionalInfo = additionalInfo;
