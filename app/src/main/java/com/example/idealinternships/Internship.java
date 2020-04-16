@@ -6,7 +6,7 @@ package com.example.idealinternships;
  */
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Date;
 
 public class Internship {
@@ -17,7 +17,8 @@ public class Internship {
 	private Date endDate;
 	private Company company;
 	private double cost;
-	private ArrayList<Information> additionalInfo;
+	private String additionalInfo;
+
 	
 	//Constructor(s)
 	/**
@@ -31,7 +32,7 @@ public class Internship {
 		endDate = null;
 		company = new Company();
 		cost = 0;
-		additionalInfo = new ArrayList<Information>();
+		additionalInfo = "";
 	}
 
 	/**
@@ -45,7 +46,7 @@ public class Internship {
 	 * @param cost the cost
 	 * @param additionalInfo additional information about the internship for easier sorting and searching
 	 */
-	public Internship(String name, Date applicationDeadline, Date startDate, Date endDate, Company company, double cost, ArrayList<Information> additionalInfo ) {
+	public Internship(String name, Date applicationDeadline, Date startDate, Date endDate, Company company, double cost, String additionalInfo) {
 		this.name = name;
 	    this.applicationDeadline = applicationDeadline;
 		this.startDate = startDate;
@@ -156,7 +157,7 @@ public class Internship {
 	 * Get additional information about the internship
 	 * @return Get the cost of the internship
 	 */
-	public ArrayList<Information> getAdditionalInfo() {
+	public String getAdditionalInfo() {
 		return additionalInfo;
 	}
 
@@ -164,7 +165,7 @@ public class Internship {
 	 * Set additional information about the internship
 	 * @param additionalInfo additional information about the internship
 	 */
-	public void setAdditionalInfo(ArrayList<Information> additionalInfo) {
+	public void setAdditionalInfo(String additionalInfo) {
 		this.additionalInfo = additionalInfo;
 	}
 
