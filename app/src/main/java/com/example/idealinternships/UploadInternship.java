@@ -18,6 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.Date;
 
+
 public class UploadInternship extends AppCompatActivity {
     private String name;
     private Date applicationDeadline;
@@ -26,6 +27,7 @@ public class UploadInternship extends AppCompatActivity {
     private Company company;
     private double cost;
     private ArrayList<Information> additionalInfo;
+    private String additionalInfoStr;
 
     /**
      *  A method which initializes the upload internship form with drop down menus and the given layout
@@ -135,15 +137,20 @@ public class UploadInternship extends AppCompatActivity {
         String internshipField = fieldSpinner.getSelectedItem().toString();
         additionalInfo.add(new Information("Field", internshipField));
 
-        EditText locationField = findViewById(R.id.enterLocation);
+        EditText locationField = findViewById(R.id.locationText);
         String internshipLocation = locationField.getText().toString();
         additionalInfo.add(new Information("Location", internshipLocation));
 
         Spinner incomeSpinner = findViewById(R.id.incomeList);
         String targetIncome = incomeSpinner.getSelectedItem().toString();
         additionalInfo.add(new Information("Target Income", targetIncome));
+
+        additionalInfoStr += additionalInfo.get(0).toString();
+        for(int i = 1; i < additionalInfo.size(); i++)
+            additionalInfoStr += "; " + additionalInfo.get(i).toString();
+
         Internship i = new Internship(name, applicationDeadline, startDate, endDate,
-                company, cost, additionalInfo );
+                company, cost, additionalInfoStr );
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference(i.getName());
