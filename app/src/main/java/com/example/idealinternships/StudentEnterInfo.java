@@ -3,9 +3,7 @@ package com.example.idealinternships;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CalendarView;
@@ -24,6 +22,10 @@ public class StudentEnterInfo extends AppCompatActivity {
     private Date startDate;
     private Date endDate;
 
+    /**
+     * A method which initializes the student info form with drop down menus and the given layout
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +66,6 @@ public class StudentEnterInfo extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
                 startDate = new Date(year-1900, month, dayOfMonth);
-                Log.d("start date:", "year: " + year + " month: " + month + " day: " + dayOfMonth);
             }
         });
 
@@ -77,6 +78,13 @@ public class StudentEnterInfo extends AppCompatActivity {
         });
     }
 
+    /**
+     * A method which collects the entered information from the student form and constructs a student object
+     * with the data which is then saved in the firebase database
+     * This method is connected to the save button on the xml file. Once it is pressed this method is performed.
+     * It will later have an intent to bring the student to their home or account page after submitting their information
+     * @param v the view
+     */
     public void saveStudentInfo(View v){
         EditText firstNameField = findViewById(R.id.enterfirstName);
         String stuFirst = firstNameField.getText().toString();
