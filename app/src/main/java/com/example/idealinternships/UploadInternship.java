@@ -20,10 +20,14 @@ import java.util.Date;
 
 
 public class UploadInternship extends AppCompatActivity {
+    private String name;
     private Date applicationDeadline;
     private Date startDate;
     private Date endDate;
-
+    private Company company;
+    private String cost;
+    private ArrayList<Information> additionalInfo;
+    private String additionalInfoStr;
 
     /**
      *  A method which initializes the upload internship form with drop down menus and the given layout
@@ -62,6 +66,7 @@ public class UploadInternship extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.incomes));
         incomeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         incomeSpinner.setAdapter(incomeAdapter);
+
         //Save important dates
         //Save the application deadline
         CalendarView deadlineField = findViewById(R.id.applicationDeadlineCalendar);
@@ -95,51 +100,64 @@ public class UploadInternship extends AppCompatActivity {
      * @param v The Upload Internship screen
      */
     public void postInternship(View v) {
+
         // Save the name of the internship
         EditText nameField = findViewById(R.id.inputName);
-       String name = nameField.getText().toString();
+        name = nameField.getText().toString();
 
        //Save the company hosting the internship
-        Company company = new Company();
+        company = new Company();
         EditText linkField = findViewById(R.id.linkToApplicationText);
         company.setLink(linkField.getText().toString());
 
         //Save the cost of the internship
-        EditText costField = findViewById(R.id.costText);
-        String cost = costField.getText().toString();
+                EditText costField = findViewById(R.id.costText);
+                cost = costField.getText().toString();
 
-        //Save the target age
+/**
+        //Save additional information about the internship helpful for searching
+
         Spinner ageSpinner = findViewById(R.id.ageList);
         String targetAge = ageSpinner.getSelectedItem().toString();
+        additionalInfo.add(new Information("Target Age", targetAge));
 
-        //Save the target gender
         Spinner genderSpinner = findViewById(R.id.genderList);
         String targetGender = genderSpinner.getSelectedItem().toString();
+        additionalInfo.add(new Information("Target Gender", targetGender));
 
-        //Save the target race
         Spinner raceSpinner = findViewById(R.id.raceList);
         String targetRace = raceSpinner.getSelectedItem().toString();
+        additionalInfo.add(new Information("Target Race", targetRace));
 
-        //Save military experience
         Switch militarySwitch = findViewById(R.id.militarySwitch);
         Boolean militaryExperience = militarySwitch.isChecked();
+        if(militaryExperience)
+            additionalInfo.add(new Information("Military Experience", "true"));
+        else
+            additionalInfo.add(new Information("Military Experience", "false"));
 
-        //Save the field
         Spinner fieldSpinner = findViewById(R.id.fieldList);
-        String field = fieldSpinner.getSelectedItem().toString();
+        String internshipField = fieldSpinner.getSelectedItem().toString();
+        additionalInfo.add(new Information("Field", internshipField));
 
-        //Save the location
         EditText locationField = findViewById(R.id.locationText);
-        String location = locationField.getText().toString();
+        String internshipLocation = locationField.getText().toString();
+        additionalInfo.add(new Information("Location", internshipLocation));
 
-        //Save target income
         Spinner incomeSpinner = findViewById(R.id.incomeList);
         String targetIncome = incomeSpinner.getSelectedItem().toString();
+        additionalInfo.add(new Information("Target Income", targetIncome));
 
 
-        Internship i = new Internship(name, applicationDeadline, startDate, endDate, company, cost,
-                                    targetAge, targetGender, targetRace, militaryExperience, field,
-                                    location, targetIncome);
+        additionalInfoStr = additionalInfo.get(0).toString();
+        for(int i = 1; i < additionalInfo.size(); i++)
+            additionalInfoStr.concat(additionalInfo.get(i).toString());*/
+
+        additionalInfoStr = "add";
+
+
+        Internship i = new Internship(name, applicationDeadline, startDate, endDate,
+                company, cost, additionalInfoStr );
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference(i.getName());

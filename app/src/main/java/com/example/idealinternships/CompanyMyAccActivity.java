@@ -34,6 +34,7 @@ public class CompanyMyAccActivity extends AppCompatActivity {
 
         if(savedInstanceState == null){
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new UploadFragment()).commit();
+
         }
 
         bottomNavView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -46,6 +47,7 @@ public class CompanyMyAccActivity extends AppCompatActivity {
                        fragment = new ManageFragment();
                        break;
                    case R.id.nav_upload_company:
+                       //fragment = new UploadFragment();
                        fragment = new UploadFragment();
                        break;
                    case R.id.nav_my_acc_company:

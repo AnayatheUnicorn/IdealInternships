@@ -21,6 +21,7 @@ public class StudentEnterInfo extends AppCompatActivity {
 
     private Date startDate;
     private Date endDate;
+    private Student s;
 
     /**
      * A method which initializes the student info form with drop down menus and the given layout
@@ -122,7 +123,7 @@ public class StudentEnterInfo extends AppCompatActivity {
         Switch notificationSwitch = findViewById(R.id.notificationsSwitch);
         Boolean stuNotifications = notificationSwitch.isChecked();
 
-        Student s = new Student(stuFirst, stuLast, stuBio, stuAge, stuGender, stuRace, stuSchool, stuMilitary,
+        s = new Student(stuFirst, stuLast, stuBio, stuAge, stuGender, stuRace, stuSchool, stuMilitary,
                 stuField, stuLocation, stuIncome, startDate, endDate, stuNotifications);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();

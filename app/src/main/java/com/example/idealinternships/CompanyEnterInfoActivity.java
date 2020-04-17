@@ -48,8 +48,8 @@ public class CompanyEnterInfoActivity extends AppCompatActivity {
         myRef.setValue(c);
 
 
-        //code to open the company home page
-        Intent intent = new Intent(this, MainActivity.class);
+        //code to open the company upload internship page
+        Intent intent = new Intent(this, CompanyMyAccActivity.class);
         startActivity(intent);
 
     }
