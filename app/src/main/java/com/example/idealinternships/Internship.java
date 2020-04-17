@@ -6,7 +6,6 @@ package com.example.idealinternships;
  */
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.Date;
 
 public class Internship {
@@ -16,8 +15,15 @@ public class Internship {
 	private Date startDate;
 	private Date endDate;
 	private Company company;
-	private double cost;
-	private String additionalInfo;
+	private String cost;
+	private String targetAge;
+	private String targetGender;
+	private String targetRace;
+	private boolean militaryExperience;
+	private String field;
+	private String location;
+	private String targetIncome;
+
 
 	
 	//Constructor(s)
@@ -31,29 +37,51 @@ public class Internship {
 		startDate = null;
 		endDate = null;
 		company = new Company();
-		cost = 0;
-		additionalInfo = "";
+		cost = "";
+		targetAge = "";
+		targetGender = "";
+		targetRace = "";
+		militaryExperience = false;
+		field = "";
+		location = "";
+		targetIncome = "";
 	}
+
 
 	/**
 	 * Constructs an Internship object with  a given application deadline,
-	 * 	start date, end date, company, cost, and additional information
-     * 	@param name the name of the internship
-     * @param applicationDeadline the given application deadline
+	 * start date, end date, company, cost, target age, target gender, target race,
+	 * militaryExperience, field, location, and targetLocation
+	 * @param name the name of the internship
+	 * @param applicationDeadline the given application deadline
 	 * @param startDate the given start date
 	 * @param endDate the given end date
 	 * @param company the company hosting the internship
 	 * @param cost the cost
-	 * @param additionalInfo additional information about the internship for easier sorting and searching
+	 * @param targetAge the target age
+	 * @param targetGender the target gender
+	 * @param targetRace the target race
+	 * @param militaryExperience military experience
+	 * @param field the internship field
+	 * @param location the internship location
+	 * @param targetIncome the target applicant income
 	 */
-	public Internship(String name, Date applicationDeadline, Date startDate, Date endDate, Company company, double cost, String additionalInfo) {
+	public Internship(String name, Date applicationDeadline, Date startDate, Date endDate, Company company, String cost, String targetAge,
+					  String targetGender, String targetRace, boolean militaryExperience, String field, String location, String targetIncome) {
 		this.name = name;
 	    this.applicationDeadline = applicationDeadline;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.company = company;
 		this.cost = cost;
-		this.additionalInfo = additionalInfo;
+		this.targetAge = targetAge;
+		this.targetGender = targetGender;
+		this.targetRace = targetRace;
+		this.militaryExperience = militaryExperience;
+		this.field = field;
+		this.location = location;
+		this.targetIncome = targetIncome;
+
 	}
 	//Methods
 
@@ -141,7 +169,7 @@ public class Internship {
 	 * Get the cost of the internship
 	 * @return the cost of the internship
 	 */
-	public double getCost() {
+	public String getCost() {
 		return cost;
 	}
 
@@ -149,24 +177,120 @@ public class Internship {
 	 * Set the cost of the internship
 	 * @param cost the cost of the internship
 	 */
-	public void setCost(double cost) {
+	public void setCost(String cost) {
 		this.cost = cost;
 	}
 
 	/**
-	 * Get additional information about the internship
-	 * @return Get the cost of the internship
+	 * Get the target age for the internship
+	 * @return the target age for the internship
 	 */
-	public String getAdditionalInfo() {
-		return additionalInfo;
+	public String getTargetAge() {
+		return targetAge;
 	}
 
 	/**
-	 * Set additional information about the internship
-	 * @param additionalInfo additional information about the internship
+	 * Set the target age for the internship
+	 * @param targetAge the target age for the internship
 	 */
-	public void setAdditionalInfo(String additionalInfo) {
-		this.additionalInfo = additionalInfo;
+	public void setTargetAge(String targetAge) {
+		this.targetAge = targetAge;
+	}
+
+	/**
+	 * Get the target race for the internship
+	 * @return the target race for the internship
+	 */
+	public String getTargetRace() {
+		return targetRace;
+	}
+
+	/**
+	 * Set the target race for the internship
+	 * @param targetRace the target race for the internship
+	 */
+	public void setTargetRace(String targetRace) {
+		this.targetRace = targetRace;
+	}
+
+	/**
+	 * Get the target gender for the internship
+	 * @return the target gender for the internship
+	 */
+	public String getTargetGender() {
+		return targetGender;
+	}
+
+	/**
+	 * Set the target gender for the internship
+	 * @param targetGender the target gender for the internship
+	 */
+	public void setTargetGender(String targetGender) {
+		this.targetGender = targetGender;
+	}
+
+	/**
+	 * Get military experience needed for the internship
+	 * @return military experience needed for the internship
+	 */
+	public boolean isMilitaryExperience() {
+		return militaryExperience;
+	}
+
+	/**
+	 * Set military experience needed for the internship
+	 * @param militaryExperience military experience needed for the internship
+	 */
+	public void setMilitaryExperience(boolean militaryExperience) {
+		this.militaryExperience = militaryExperience;
+	}
+
+	/**
+	 * Get the internship field
+	 * @return the internship field
+	 */
+	public String getField() {
+		return field;
+	}
+
+	/**
+	 * Set the internship field
+	 * @param field the internship field
+	 */
+	public void setField(String field) {
+		this.field = field;
+	}
+
+	/**
+	 * Get the internship location
+	 * @return the internship location
+	 */
+	public String getLocation() {
+		return location;
+	}
+
+	/**
+	 * Set the internship location
+	 * @param location the internship location
+	 */
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	/**
+	 * Get the internship target income
+	 * @return the internship target income
+	 */
+	public String getTargetIncome() {
+		return targetIncome;
+	}
+
+	/**
+	 * Set the internship target income
+	 * @param targetIncome the internship target income
+	 */
+	public void setTargetIncome(String targetIncome) {
+		this.targetIncome = targetIncome;
 	}
 
 	/**
