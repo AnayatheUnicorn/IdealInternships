@@ -33,7 +33,7 @@ public class CompanyMyAccActivity extends AppCompatActivity {
         bottomNavView = findViewById(R.id.bottom_navigation_company);
 
         if(savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new UploadFragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new UploadInternshipFragment()).commit();
 
         }
 
@@ -48,7 +48,7 @@ public class CompanyMyAccActivity extends AppCompatActivity {
                        break;
                    case R.id.nav_upload_company:
                        //fragment = new UploadFragment();
-                       fragment = new UploadFragment();
+                       fragment = new UploadInternshipFragment();
                        break;
                    case R.id.nav_my_acc_company:
                        fragment = new CompanyMyAccFragment();

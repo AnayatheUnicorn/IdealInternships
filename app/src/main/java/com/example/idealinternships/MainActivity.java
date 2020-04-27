@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
@@ -19,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Company c;
+    private Fragment uploadInternshipFrag;
 
     /**
      * Opens the app
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        uploadInternshipFrag = new UploadInternshipFragment();
 
 
         //FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -65,9 +67,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToUploadInternshipPage(View v){
-        Intent intent = new Intent(this, UploadInternship.class);
-        startActivity(intent);
+    public void goToUploadInternshipPage(View v) {
+       Intent intent = new Intent(this, UploadInternship.class);
+       startActivity(intent);
     }
 
 

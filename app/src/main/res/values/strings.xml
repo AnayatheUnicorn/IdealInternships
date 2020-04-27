@@ -27,7 +27,7 @@
     <string name="enterPrerequisitesStr">Enter prerequisites</string>
     <string name="fieldStr">Field</string>
     <string name="uploadAPhotoStr">Upload a Photo</string>
-    <string name="linkToApplicationStr">Link to application</string>
+    <string name="linkToApplicationStr">Link to internship</string>
     <string name="enterAnApplicationLinkStr">Enter an application link</string>
     <string name="postStr">Post</string>
     <string name="companyNameStr">Company Name</string>
@@ -45,7 +45,7 @@
     <string name="manageStr">Manage</string>
     <string name="myAccStr">My Account</string>
     <string name="enterCompanyInfoStr">Enter Company Info</string>
-    <string name = "goToMyAccCompany">go to my acc company</string>
+    <string name = "goToMyAccCompany">Go to the Company Interface!</string>
 
     <string name="schoolStr">School</string>
     <string name="enterSchoolHintStr">Enter your school</string>
@@ -81,6 +81,7 @@
         <item>Female</item>
         <item>Male</item>
         <item>Nonbinary</item>
+        <item>All</item>
         <item>Other</item>
     </string-array>
 
@@ -100,6 +101,7 @@
         <item>Native American or Alaska Native</item>
         <item>Asian/Pacific Islander</item>
         <item>Multiracial</item>
+        <item>All</item>
         <item>N/A</item>
     </string-array>
 

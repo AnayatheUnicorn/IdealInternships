@@ -27,6 +27,9 @@ public class Internship {
 	private String field;
 	private String location;
 	private String targetIncome;
+	private String preReqs;
+	private String internshipLink;
+	private String internshipDescription;
 
 
 	
@@ -53,6 +56,9 @@ public class Internship {
 		field = "";
 		location = "";
 		targetIncome = "";
+		preReqs = "";
+		internshipLink = "";
+		internshipDescription = "";
 	}
 
 
@@ -72,9 +78,13 @@ public class Internship {
 	 * @param field the internship field
 	 * @param location the internship location
 	 * @param targetIncome the target applicant income
+	 * @param preReqs the pre-requisites
+	 * @param internshipLink the internship link
+	 * @param internshipDescription the internship Description
 	 */
-	public Internship(String name, Date applicationDeadline, Date startDate, Date endDate, Company company, String cost, String minAge, String maxAge,
-					  String minGrade, String maxGrade, String targetGender, String targetRace, boolean militaryExperience, String field, String location, String targetIncome) {
+	public Internship(String name, Date applicationDeadline, Date startDate, Date endDate, Company company, String cost, String targetAge,
+                      String minAge, String maxAge, String minGrade, String maxGrade, String targetGender, String targetRace, boolean militaryExperience, String field, String location, String targetIncome,
+					  String preReqs, String internshipLink, String internshipDescription) {
 		this.name = name;
 	    this.applicationDeadline = applicationDeadline;
 		this.startDate = startDate;
@@ -92,25 +102,28 @@ public class Internship {
 		this.field = field;
 		this.location = location;
 		this.targetIncome = targetIncome;
+		this.preReqs = preReqs;
+		this.internshipLink = internshipLink;
+		this.internshipDescription = internshipDescription;
 
 	}
 	//Methods
 
-    /**
-     * Get the name of the internship
-     * @return the name of the internship
-     */
-    public String getName() {
-        return name;
-    }
+	/**
+	 * Get the name of the internship
+	 * @return the name of the internship
+	 */
+	public String getName() {
+		return name;
+	}
 
-    /**
-     * Set the name of the internship
-     * @param name the name of the internship
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
+	/**
+	 * Set the name of the internship
+	 * @param name the name of the internship
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	/**
 	 * Get the application deadline of the internship
@@ -351,6 +364,42 @@ public class Internship {
 	public void setTargetIncome(String targetIncome) {
 		this.targetIncome = targetIncome;
 	}
+
+	/**
+	 * Get the internship pre-requisites
+	 * @return the intersnhip pre-requisites
+	 */
+	public String getPreReqs(){return preReqs;}
+
+	/**
+	 * Set the internship pre-requisites
+	 * @param preReqs the internship pre-requisites
+	 */
+	public void setPreReqs(String preReqs){this.preReqs = preReqs; }
+
+	/**
+	 * Get the internship link
+	 * @return the internship link
+	 */
+	public String getInternshipLink(){return internshipLink;}
+
+	/**
+	 * Set the internship link
+	 * @param internshipLink the internship link
+	 */
+	public void setInternshipLink(String internshipLink) {this.internshipLink = internshipLink;}
+
+	/**
+	 * Get the internship description
+	 * @return the internship description
+	 */
+	public String getInternshipDescription() {return internshipDescription;}
+
+	/**
+	 * Set the internship description
+	 * @param internshipDescription the internship description
+	 */
+	public void setInternshipDescription(String internshipDescription) {this.internshipDescription = internshipDescription;}
 
 	/**
 	 * Returns the company website's url if this Internship object has a Company object
