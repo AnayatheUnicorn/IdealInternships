@@ -126,6 +126,10 @@ public class UploadInternship extends AppCompatActivity {
         Switch militarySwitch = findViewById(R.id.militarySwitch);
         Boolean militaryExperience = militarySwitch.isChecked();
 
+        //Save paid
+        Switch paidSwitch = findViewById(R.id.paidSwitch);
+        Boolean paid = paidSwitch.isChecked();
+
         //Save the field
         Spinner fieldSpinner = findViewById(R.id.fieldList);
         String field = fieldSpinner.getSelectedItem().toString();
@@ -154,7 +158,7 @@ public class UploadInternship extends AppCompatActivity {
 
 
         Internship i = new Internship(name, applicationDeadline, startDate, endDate, company, cost,
-                targetAge, "min age", "max age", "min gr", "max gr",targetGender, targetRace, militaryExperience, field,
+                targetAge, "min age", "max age", "min gr", "max gr",targetGender, targetRace, militaryExperience, paid, field,
                 location, targetIncome, preReqs, appLink, description);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();

@@ -24,6 +24,7 @@ public class Internship {
 	private String targetGender;
 	private String targetRace;
 	private boolean militaryExperience;
+	private boolean paid;
 	private String field;
 	private String location;
 	private String targetIncome;
@@ -53,6 +54,7 @@ public class Internship {
 		targetGender = "";
 		targetRace = "";
 		militaryExperience = false;
+		paid = false;
 		field = "";
 		location = "";
 		targetIncome = "";
@@ -83,7 +85,7 @@ public class Internship {
 	 * @param internshipDescription the internship Description
 	 */
 	public Internship(String name, Date applicationDeadline, Date startDate, Date endDate, Company company, String cost, String targetAge,
-                      String minAge, String maxAge, String minGrade, String maxGrade, String targetGender, String targetRace, boolean militaryExperience, String field, String location, String targetIncome,
+                      String minAge, String maxAge, String minGrade, String maxGrade, String targetGender, String targetRace, boolean militaryExperience, boolean paid, String field, String location, String targetIncome,
 					  String preReqs, String internshipLink, String internshipDescription) {
 		this.name = name;
 	    this.applicationDeadline = applicationDeadline;
@@ -99,6 +101,7 @@ public class Internship {
 		this.targetGender = targetGender;
 		this.targetRace = targetRace;
 		this.militaryExperience = militaryExperience;
+		this.paid = paid;
 		this.field = field;
 		this.location = location;
 		this.targetIncome = targetIncome;
@@ -316,6 +319,22 @@ public class Internship {
 	public void setMilitaryExperience(boolean militaryExperience) {
 		this.militaryExperience = militaryExperience;
 	}
+
+    /**
+     * Set if paid for te internship
+     * @return if the internship pays the students
+     */
+	public boolean isPaid(){
+	    return paid;
+    }
+
+    /**
+     * Sets whether an internship pays a students
+     * @param paid if tge internship pays the student
+     */
+    public void setPaid(boolean paid){
+	    this.paid = paid;
+    }
 
 	/**
 	 * Get the internship field
