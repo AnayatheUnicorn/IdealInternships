@@ -17,6 +17,10 @@ public class Internship {
 	private Company company;
 	private String cost;
 	private String targetAge;
+	private String minAge;
+	private String maxAge;
+	private String minGrade;
+	private String maxGrade;
 	private String targetGender;
 	private String targetRace;
 	private boolean militaryExperience;
@@ -39,6 +43,10 @@ public class Internship {
 		company = new Company();
 		cost = "";
 		targetAge = "";
+		minAge = "";
+		maxAge = "";
+		minGrade = "";
+		maxGrade = "";
 		targetGender = "";
 		targetRace = "";
 		militaryExperience = false;
@@ -58,7 +66,6 @@ public class Internship {
 	 * @param endDate the given end date
 	 * @param company the company hosting the internship
 	 * @param cost the cost
-	 * @param targetAge the target age
 	 * @param targetGender the target gender
 	 * @param targetRace the target race
 	 * @param militaryExperience military experience
@@ -66,8 +73,8 @@ public class Internship {
 	 * @param location the internship location
 	 * @param targetIncome the target applicant income
 	 */
-	public Internship(String name, Date applicationDeadline, Date startDate, Date endDate, Company company, String cost, String targetAge,
-					  String targetGender, String targetRace, boolean militaryExperience, String field, String location, String targetIncome) {
+	public Internship(String name, Date applicationDeadline, Date startDate, Date endDate, Company company, String cost, String minAge, String maxAge,
+					  String minGrade, String maxGrade, String targetGender, String targetRace, boolean militaryExperience, String field, String location, String targetIncome) {
 		this.name = name;
 	    this.applicationDeadline = applicationDeadline;
 		this.startDate = startDate;
@@ -75,6 +82,10 @@ public class Internship {
 		this.company = company;
 		this.cost = cost;
 		this.targetAge = targetAge;
+		this.minAge = minAge;
+		this.maxAge = maxAge;
+		this.minGrade = minGrade;
+		this.maxGrade = maxGrade;
 		this.targetGender = targetGender;
 		this.targetRace = targetRace;
 		this.militaryExperience = militaryExperience;
@@ -182,19 +193,67 @@ public class Internship {
 	}
 
 	/**
-	 * Get the target age for the internship
-	 * @return the target age for the internship
+	 * Get the minimum age for the internship
+	 * @return the minimum age for the internship
 	 */
-	public String getTargetAge() {
-		return targetAge;
+	public String getMinAge() {
+		return minAge;
 	}
 
 	/**
-	 * Set the target age for the internship
-	 * @param targetAge the target age for the internship
+	 * Set the minimum age for the internship
+	 * @param minAge the minimum age for the internship
 	 */
-	public void setTargetAge(String targetAge) {
-		this.targetAge = targetAge;
+	public void setMinAge(String minAge) {
+		this.minAge = minAge;
+	}
+
+	/**
+	 * Get the maximum age for the internship
+	 * @return the maximum age for the internship
+	 */
+	public String getMaxAge() {
+		return maxAge;
+	}
+
+	/**
+	 * Set the maximum age for the internship
+	 * @param maxAge the maximum age for the internship
+	 */
+	public void setMaxAge(String maxAge) {
+		this.maxAge = maxAge;
+	}
+
+	/**
+	 * Get the minimum grade for the internship
+	 * @return the minimum grade for the internship
+	 */
+	public String getMinGrade() {
+		return minGrade;
+	}
+
+	/**
+	 * Set the minimum grade for the internship
+	 * @param minGrade the minimum grade for the internship
+	 */
+	public void setMinGrade(String minGrade) {
+		this.minGrade = minGrade;
+	}
+
+	/**
+	 * Get the maximum grade for the internship
+	 * @return the maximum grade for the internship
+	 */
+	public String getMaxGrade() {
+		return maxGrade;
+	}
+
+	/**
+	 * Set the maximum grade for the internship
+	 * @param maxGrade the maximum grade for the internship
+	 */
+	public void setMaxGrade(String maxGrade) {
+		this.maxGrade = maxGrade;
 	}
 
 	/**
@@ -294,9 +353,9 @@ public class Internship {
 	}
 
 	/**
-	 * Returns the company website's url if this Internship object has a Comapany object
+	 * Returns the company website's url if this Internship object has a Company object
 	 * with a proper URL stored in its link String attribute
-	 * @return the company website's url if this Internship object has a Comapany object
+	 * @return the company website's url if this Internship object has a Company object
 	 * 	with a proper URL stored in its link String attribute
 	 */
 	public URL learnMore(){
