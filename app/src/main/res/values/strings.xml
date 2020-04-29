@@ -11,10 +11,22 @@
     <string name="enterBio">Bio</string>
     <string name="nameStr">Name</string>
     <string name="datesStr">Dates</string>
-    <string name="orGradeStr">or Grade</string>
+    <string name="orGradeStr">or Grade (If applicable) </string>
+    <string name="minGradeStr"> Minimum Grade (If applicable) </string>
+    <string name="maxGradeStr">Maximum Grade(If applicable) </string>
     <string name="locationStr">Location</string>
     <string name="genderStr">Gender</string>
+
+    ///////////////////////////////////////////// Race Strings /////////////////////////////////////
     <string name="raceStr">Race</string>
+    <string name="whiteCaucasianStr">White/Caucasian</string>
+    <string name="blackAfricanAmericanStr">Black/African American</string>
+    <string name="nativeAmericanOrAlaskaNativeStr">Native American or Alaska Native</string>
+    <string name="asianPacificIslanderStr">Asian/Pacific Islander</string>
+    <string name="multiracialStr">Multiracial</string>
+    <string name="noneStr">N/A</string>
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
     <string name="incomeStr">Target Income</string>
     <string name="militaryStr">Military</string>
     <string name="paidStr">Paid</string>
@@ -25,7 +37,29 @@
     <string name="enterDescriptionStr">Enter a description</string>
     <string name="prerequisitesStr">Prerequisites</string>
     <string name="enterPrerequisitesStr">Enter prerequisites</string>
+
+    /////////////////////////////////////////// Field Strings //////////////////////////////////////
     <string name="fieldStr">Field</string>
+    <string name="biologyStr">Biology</string>
+    <string name="chemistryStr">Chemistry</string>
+    <string name="engineeringStr">Engineering</string>
+    <string name="physicsStr">Physics</string>
+    <string name="computerScienceStr">Computer Science</string>
+    <string name="musicStr">Music</string>
+    <string name="artStr">Art</string>
+    <string name="theatreStr">Theatre</string>
+    <string name="environmentalScienceStr">Environmental Science</string>
+    <string name="neuroscienceStr">Neuroscience</string>
+    <string name="medicineStr">Medicine</string>
+    <string name="writingStr">Writing</string>
+    <string name="businessStr">Business</string>
+    <string name="governmentPoliticsStr">Government/Politics</string>
+    <string name="marketingStr">Marketing</string>
+    <string name="mathStr">Math</string>
+    <string name="otherFieldStr">Other Field Explained in the Description</string>
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    <string name="otherStr">Other</string>
     <string name="uploadAPhotoStr">Upload a Photo</string>
     <string name="linkToApplicationStr">Link to internship</string>
     <string name="enterAnApplicationLinkStr">Enter an application link</string>
@@ -40,6 +74,8 @@
     <string name="enterCompanyWebsiteStr">Enter company website</string>
     <string name="save">SAVE</string>
     <string name="ageStr">Age</string>
+    <string name="minAgeStr">Minimum Age (If applicable)</string>
+    <string name="maxAgeStr">Maximum Age (If applicable)</string>
     <string name="enterStudentInfoStr">Student Info Form</string>
     <string name="uploadStr">Upload</string>
     <string name="manageStr">Manage</string>
@@ -63,6 +99,8 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_company_posted_internships">CompanyPostedInternshipsActivity
     </string>
+
+    //////////////////////////////////////////// String Arrays /////////////////////////////////////
     <string-array name="ages">
     <item>--</item>
     <item>13</item>
