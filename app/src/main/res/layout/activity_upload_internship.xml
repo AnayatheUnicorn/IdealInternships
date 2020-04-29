@@ -76,30 +76,60 @@
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:id="@+id/ageLabel"
+                android:id="@+id/minAgeLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/ageStr"
+                android:text="@string/minAgeStr"
                 android:textStyle="bold" />
 
             <Spinner
-                android:id="@+id/ageList"
+                android:id="@+id/minAgeList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:entries="@array/ages" />
 
             <TextView
-                android:id="@+id/gradeLabel"
-                android:layout_width="wrap_content"
+                android:id="@+id/maxAgeLabel"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/orGradeStr"
+                android:text="@string/maxAgeStr"
                 android:textStyle="bold" />
 
             <Spinner
-                android:id="@+id/gradeList"
+                android:id="@+id/maxAgeList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/ages" />
+
+            <TextView
+                android:id="@+id/minGradeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/minGradeStr"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/minGradeList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/grade" />
+
+            <TextView
+                android:id="@+id/maxGradeLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/maxGradeStr"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/maxGradeList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -146,12 +176,48 @@
                 android:text="@string/raceStr"
                 android:textStyle="bold" />
 
-            <Spinner
-                android:id="@+id/raceList"
+            <LinearLayout
+                android:id="@+id/races"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:entries="@array/races" />
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/whiteCaucasianCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/whiteCaucasianStr" />
+
+                <CheckBox
+                    android:id="@+id/blackAfricanAmericanCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/blackAfricanAmericanStr" />
+
+                <CheckBox
+                    android:id="@+id/nativeAmericanOrAlaskaNativeCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nativeAmericanOrAlaskaNativeStr" />
+
+                <CheckBox
+                    android:id="@+id/asianPacificIslanderCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/asianPacificIslanderStr" />
+
+                <CheckBox
+                    android:id="@+id/multiracialCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/multiracialStr" />
+
+                <CheckBox
+                    android:id="@+id/n_ARaceCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/noneStr" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/incomeLabel"
@@ -237,6 +303,13 @@
                 android:text="@string/picturesStr"
                 android:textStyle="bold" />
 
+            <ImageView
+                android:id="@+id/internshipPic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/uploadAPhotoStr"
+                app:srcCompat="@drawable/ic_file_upload_black_24dp" />
+
             <Button
                 android:id="@+id/uploadPictureButton"
                 android:layout_width="match_parent"
@@ -296,11 +369,114 @@
                 android:text="@string/fieldStr"
                 android:textStyle="bold" />
 
-            <Spinner
-                android:id="@+id/fieldList"
+            <LinearLayout
+                android:id="@+id/fields"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/fields" />
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/biologyCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/biologyStr" />
+
+                <CheckBox
+                    android:id="@+id/chemistryCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chemistryStr" />
+
+                <CheckBox
+                    android:id="@+id/engineeringCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/engineeringStr" />
+
+                <CheckBox
+                    android:id="@+id/physicsCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/physicsStr" />
+
+                <CheckBox
+                    android:id="@+id/computerScienceCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/computerScienceStr" />
+
+                <CheckBox
+                    android:id="@+id/musicCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/musicStr" />
+
+                <CheckBox
+                    android:id="@+id/artCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/artStr" />
+
+                <CheckBox
+                    android:id="@+id/theatreCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/theatreStr" />
+
+                <CheckBox
+                    android:id="@+id/environmentalScienceCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/environmentalScienceStr" />
+
+                <CheckBox
+                    android:id="@+id/neuroscienceCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/neuroscienceStr" />
+
+                <CheckBox
+                    android:id="@+id/medicineCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/medicineStr" />
+
+                <CheckBox
+                    android:id="@+id/writingCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/writingStr" />
+
+                <CheckBox
+                    android:id="@+id/businessCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/businessStr" />
+
+                <CheckBox
+                    android:id="@+id/governmentPoliticsCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/governmentPoliticsStr" />
+
+                <CheckBox
+                    android:id="@+id/marketingCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/marketingStr" />
+
+                <CheckBox
+                    android:id="@+id/mathCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mathStr" />
+
+                <CheckBox
+                    android:id="@+id/otherFieldCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/otherFieldStr" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/linkToApplicaitonLinkLabel"
