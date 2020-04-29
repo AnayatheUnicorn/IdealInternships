@@ -16,16 +16,15 @@ public class Internship {
 	private Date endDate;
 	private Company company;
 	private String cost;
-	private String targetAge;
 	private String minAge;
 	private String maxAge;
 	private String minGrade;
 	private String maxGrade;
 	private String targetGender;
-	private String targetRace;
+	private String targetRaces;
 	private boolean militaryExperience;
 	private boolean paid;
-	private String field;
+	private String fields;
 	private String location;
 	private String targetIncome;
 	private String preReqs;
@@ -46,16 +45,15 @@ public class Internship {
 		endDate = null;
 		company = new Company();
 		cost = "";
-		targetAge = "";
 		minAge = "";
 		maxAge = "";
 		minGrade = "";
 		maxGrade = "";
 		targetGender = "";
-		targetRace = "";
+		targetRaces = "";
 		militaryExperience = false;
 		paid = false;
-		field = "";
+		fields = "";
 		location = "";
 		targetIncome = "";
 		preReqs = "";
@@ -65,9 +63,7 @@ public class Internship {
 
 
 	/**
-	 * Constructs an Internship object with  a given application deadline,
-	 * start date, end date, company, cost, target age, target gender, target race,
-	 * militaryExperience, field, location, and targetLocation
+	 *
 	 * @param name the name of the internship
 	 * @param applicationDeadline the given application deadline
 	 * @param startDate the given start date
@@ -75,17 +71,36 @@ public class Internship {
 	 * @param company the company hosting the internship
 	 * @param cost the cost
 	 * @param targetGender the target gender
-	 * @param targetRace the target race
+	 * @param targetRaces the target race
 	 * @param militaryExperience military experience
-	 * @param field the internship field
-	 * @param location the internship location
-	 * @param targetIncome the target applicant income
-	 * @param preReqs the pre-requisites
-	 * @param internshipLink the internship link
-	 * @param internshipDescription the internship Description
 	 */
-	public Internship(String name, Date applicationDeadline, Date startDate, Date endDate, Company company, String cost, String targetAge,
-                      String minAge, String maxAge, String minGrade, String maxGrade, String targetGender, String targetRace, boolean militaryExperience, boolean paid, String field, String location, String targetIncome,
+    /**
+     * Constructs an Internship object with  a given application deadline,
+     * start date, end date, company, cost, target age, target gender, target race,
+     * 	militaryExperience, fields, location, and targetLocation
+     * @param name
+     * @param applicationDeadline
+     * @param startDate
+     * @param endDate
+     * @param company
+     * @param cost
+     * @param minAge
+     * @param maxAge
+     * @param minGrade
+     * @param maxGrade
+     * @param targetGender
+     * @param targetRaces
+     * @param militaryExperience
+     * @param paid
+     * @param fields the internship fields
+     * @param location the internship location
+     * @param targetIncome the target applicant income
+     * @param preReqs the pre-requisites
+     * @param internshipLink the internship link
+     * @param internshipDescription the internship Description
+     */
+	public Internship(String name, Date applicationDeadline, Date startDate, Date endDate, Company company, String cost,
+                      String minAge, String maxAge, String minGrade, String maxGrade, String targetGender, String targetRaces, boolean militaryExperience, boolean paid, String fields, String location, String targetIncome,
 					  String preReqs, String internshipLink, String internshipDescription) {
 		this.name = name;
 	    this.applicationDeadline = applicationDeadline;
@@ -93,23 +108,22 @@ public class Internship {
 		this.endDate = endDate;
 		this.company = company;
 		this.cost = cost;
-		this.targetAge = targetAge;
 		this.minAge = minAge;
 		this.maxAge = maxAge;
 		this.minGrade = minGrade;
 		this.maxGrade = maxGrade;
 		this.targetGender = targetGender;
-		this.targetRace = targetRace;
+		this.targetRaces = targetRaces;
 		this.militaryExperience = militaryExperience;
 		this.paid = paid;
-		this.field = field;
+		this.fields = fields;
 		this.location = location;
 		this.targetIncome = targetIncome;
 		this.preReqs = preReqs;
 		this.internshipLink = internshipLink;
 		this.internshipDescription = internshipDescription;
-
 	}
+
 	//Methods
 
 	/**
@@ -276,16 +290,16 @@ public class Internship {
 	 * Get the target race for the internship
 	 * @return the target race for the internship
 	 */
-	public String getTargetRace() {
-		return targetRace;
+	public String getTargetRaces() {
+		return targetRaces;
 	}
 
 	/**
 	 * Set the target race for the internship
-	 * @param targetRace the target race for the internship
+	 * @param targetRaces the target race for the internship
 	 */
-	public void setTargetRace(String targetRace) {
-		this.targetRace = targetRace;
+	public void setTargetRaces(String targetRaces) {
+		this.targetRaces = targetRaces;
 	}
 
 	/**
@@ -338,18 +352,18 @@ public class Internship {
 
 	/**
 	 * Get the internship field
-	 * @return the internship field
+	 * @return the internship fields
 	 */
-	public String getField() {
-		return field;
+	public String getFields() {
+		return fields;
 	}
 
 	/**
-	 * Set the internship field
-	 * @param field the internship field
+	 * Set the internship fields
+	 * @param fields the internship fields
 	 */
-	public void setField(String field) {
-		this.field = field;
+	public void setFields(String fields) {
+		this.fields = fields;
 	}
 
 	/**
@@ -419,6 +433,38 @@ public class Internship {
 	 * @param internshipDescription the internship description
 	 */
 	public void setInternshipDescription(String internshipDescription) {this.internshipDescription = internshipDescription;}
+
+
+	@Override
+    /**
+     * Return a string containing the internship's information
+     * for display purposes
+     */
+    public String toString(){
+	    String superStr = "" ;
+        superStr += "Name of Internship: " + name + "\n" +
+                "Apply by: " + applicationDeadline + "\n" +
+                "From: " + startDate + "\n" +
+                "To: " + endDate + "\n" +
+                "Hosting Company: " + company + "\n" +
+                "Cost (in US dollars): " + cost + "\n" +
+                "Minimum Age (If applicable): " + minAge + "\n" +
+                "Maximum Age (If applicable): " + maxAge + "\n" +
+                "Minimum Grade (If applicable): " + minGrade + "\n" +
+                "Maximum Grade (If applicable): " + maxGrade + "\n" +
+                "Target Gender (If applicable): " + targetGender + "\n" +
+                "Target Races (If applicable): " + targetRaces + "\n" +
+                "Military Experience required: " + militaryExperience + "\n" +
+                "Paid: " + paid + "\n" +
+                "Fields: " + fields + "\n" +
+                "Location: " + location + "\n" +
+                "Target Income: " + targetIncome + "\n" +
+                "Prerequisites: " + preReqs + "\n" +
+                "Link: " + learnMore() + "\n" +
+                "Description: " + internshipDescription + "\n";
+	    return superStr;
+    }
+
 
 	/**
 	 * Returns the company website's url if this Internship object has a Company object
