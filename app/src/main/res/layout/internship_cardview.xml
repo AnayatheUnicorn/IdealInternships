@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/internshipPic"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_account_circle_black_24dp" />
+
+        <TextView
+            android:id="@+id/internshipNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="175dp"
+            android:layout_marginTop="10dp"
+            android:text="Internship Name"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/trashButton"
+            android:layout_width="50dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/editButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/finaltrash" />
+
+        <Button
+            android:id="@+id/editButton"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/editStr"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="243dp"
+            android:layout_height="71dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="15dp"
+            android:text="Description"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/internshipPic"
+            app:layout_constraintTop_toBottomOf="@+id/internshipNameTextView" />
+
+        <Button
+            android:id="@+id/seeMoreButton"
+            android:layout_width="115dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="320dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/seeMoreStr"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/internshipPic"
+            app:layout_constraintTop_toBottomOf="@+id/editButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
