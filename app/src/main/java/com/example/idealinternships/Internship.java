@@ -11,6 +11,7 @@ import java.util.Date;
 public class Internship {
 	//Data
     private String name;
+    private int imageResource;
 	private Date applicationDeadline;
 	private Date startDate;
 	private Date endDate;
@@ -59,21 +60,11 @@ public class Internship {
 		preReqs = "";
 		internshipLink = "";
 		internshipDescription = "";
+		imageResource = 0;
 	}
 
 
-	/**
-	 *
-	 * @param name the name of the internship
-	 * @param applicationDeadline the given application deadline
-	 * @param startDate the given start date
-	 * @param endDate the given end date
-	 * @param company the company hosting the internship
-	 * @param cost the cost
-	 * @param targetGender the target gender
-	 * @param targetRaces the target race
-	 * @param militaryExperience military experience
-	 */
+
     /**
      * Constructs an Internship object with  a given application deadline,
      * start date, end date, company, cost, target age, target gender, target race,
@@ -103,6 +94,7 @@ public class Internship {
                       String minAge, String maxAge, String minGrade, String maxGrade, String targetGender, String targetRaces, boolean militaryExperience, boolean paid, String fields, String location, String targetIncome,
 					  String preReqs, String internshipLink, String internshipDescription) {
 		this.name = name;
+		this.imageResource = image;
 	    this.applicationDeadline = applicationDeadline;
 		this.startDate = startDate;
 		this.endDate = endDate;
@@ -141,6 +133,11 @@ public class Internship {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+
+    public int getImageResource(){ return imageResource;}
+
+    public void setImageResource(int newResource){ this.imageResource = newResource;}
 
 	/**
 	 * Get the application deadline of the internship
