@@ -23,8 +23,9 @@
     <string name="blackAfricanAmericanStr">Black/African American</string>
     <string name="nativeAmericanOrAlaskaNativeStr">Native American or Alaska Native</string>
     <string name="asianPacificIslanderStr">Asian/Pacific Islander</string>
+    <string name="latinoaStr">Latino/a</string>
     <string name="multiracialStr">Multiracial</string>
-    <string name="noneStr">N/A</string>
+    <string name="allStr">All</string>
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
     <string name="incomeStr">Target Income</string>
@@ -99,9 +100,6 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_company_posted_internships">CompanyPostedInternshipsActivity
     </string>
-    <string name="currentPostingsStr">Current Postings</string>
-    <string name="editStr">Edit</string>
-    <string name="seeMoreStr">SEE MORE</string>
 
     //////////////////////////////////////////// String Arrays /////////////////////////////////////
     <string-array name="ages">
@@ -122,8 +120,8 @@
         <item>Female</item>
         <item>Male</item>
         <item>Nonbinary</item>
-        <item>Other</item>
         <item>All</item>
+        <item>Other</item>
     </string-array>
 
     <string-array name="grade">
@@ -141,9 +139,11 @@
         <item>Black/African American</item>
         <item>Native American or Alaska Native</item>
         <item>Asian/Pacific Islander</item>
+        <item>Hispanic</item>
         <item>Multiracial</item>
-        <item>N/A</item>
+        <item>Other</item>
     </string-array>
+
 
     <string-array name="fields">
         <item>--</item>
