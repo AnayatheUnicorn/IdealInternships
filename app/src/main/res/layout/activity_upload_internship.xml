@@ -32,6 +32,22 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/companyNameLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/companyNameStr"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/companyNameText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/enterCompanyNameStr"
+                android:inputType="textPersonName"
+                android:autofillHints="" />
+
+            <TextView
                 android:id="@+id/nameLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

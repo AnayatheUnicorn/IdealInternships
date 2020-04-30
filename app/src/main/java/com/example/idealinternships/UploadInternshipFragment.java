@@ -49,29 +49,35 @@ public class UploadInternshipFragment extends Fragment  {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup conatiner, @Nullable Bundle savedInsatnceState){
         View v = inflater.inflate(R.layout.activity_upload_internship, conatiner,false);
 
-        Spinner ageSpinner = v.findViewById(R.id.ageList);
-        ArrayAdapter<String> ageAdapter = new ArrayAdapter<String>(getContext(),
+        Spinner minAgeSpinner = v.findViewById(R.id.minAgeList);
+        ArrayAdapter<String> minAgeAdapter = new ArrayAdapter<String>(getContext(),
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.ages));
-        ageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        ageSpinner.setAdapter(ageAdapter);
+        minAgeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        minAgeSpinner.setAdapter(minAgeAdapter);
+
+        Spinner maxAgeSpinner = v.findViewById(R.id.maxAgeList);
+        ArrayAdapter<String> maxAgeAdapter = new ArrayAdapter<String>(getContext(),
+                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.ages));
+        maxAgeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        maxAgeSpinner.setAdapter(maxAgeAdapter);
+
+        Spinner minGradeSpinner = v.findViewById(R.id.minAgeList);
+        ArrayAdapter<String> minGradeAdapter = new ArrayAdapter<String>(getContext(),
+                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.ages));
+        minGradeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        minGradeSpinner.setAdapter(minGradeAdapter);
+
+        Spinner maxGradeSpinner = v.findViewById(R.id.maxAgeList);
+        ArrayAdapter<String> maxGradeAdapter = new ArrayAdapter<String>(getContext(),
+                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.ages));
+        maxGradeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        maxGradeSpinner.setAdapter(maxGradeAdapter);
 
         Spinner genderSpinner = v.findViewById(R.id.genderList);
         ArrayAdapter<String> genderAdapter = new ArrayAdapter<String>(getContext(),
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.gender));
         genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         genderSpinner.setAdapter(genderAdapter);
-
-        Spinner raceSpinner = v.findViewById(R.id.raceList);
-        ArrayAdapter<String> raceAdapter = new ArrayAdapter<String>(getContext(),
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.races));
-        raceAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        raceSpinner.setAdapter(raceAdapter);
-
-        Spinner fieldSpinner = v.findViewById(R.id.fieldList);
-        ArrayAdapter<String> fieldAdapter = new ArrayAdapter<String>(getContext(),
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.fields));
-        fieldAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        fieldSpinner.setAdapter(fieldAdapter);
 
         Spinner incomeSpinner = v.findViewById(R.id.incomeList);
         ArrayAdapter<String> incomeAdapter = new ArrayAdapter<String>(getContext(),

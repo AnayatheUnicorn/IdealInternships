@@ -3,12 +3,16 @@ package com.example.idealinternships;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Switch;
 
@@ -20,9 +24,14 @@ import java.util.Date;
 
 
 public class UploadInternship extends AppCompatActivity {
+    private static final int PERMISSION_REQUEST = 0;
     private Date applicationDeadline;
     private Date startDate;
     private Date endDate;
+    private CheckBox[] racesArray;
+    private CheckBox[] fieldsArray;
+    ImageView internshipPic;
+    Button uploadPictureButton;
 
 
     /**
@@ -33,29 +42,36 @@ public class UploadInternship extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_internship);
-        Spinner ageSpinner = findViewById(R.id.ageList);
-        ArrayAdapter<String> ageAdapter = new ArrayAdapter<String>(UploadInternship.this,
+
+        Spinner minAgeSpinner = findViewById(R.id.minAgeList);
+        ArrayAdapter<String> minAgeAdapter = new ArrayAdapter<String>(UploadInternship.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.ages));
-        ageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        ageSpinner.setAdapter(ageAdapter);
+        minAgeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        minAgeSpinner.setAdapter(minAgeAdapter);
+
+        Spinner maxAgeSpinner = findViewById(R.id.maxAgeList);
+        ArrayAdapter<String> maxAgeAdapter = new ArrayAdapter<String>(UploadInternship.this,
+                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.ages));
+        maxAgeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        maxAgeSpinner.setAdapter(maxAgeAdapter);
+
+        Spinner minGradeSpinner = findViewById(R.id.minAgeList);
+        ArrayAdapter<String> minGradeAdapter = new ArrayAdapter<String>(UploadInternship.this,
+                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.ages));
+        minGradeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        minGradeSpinner.setAdapter(minGradeAdapter);
+
+        Spinner maxGradeSpinner = findViewById(R.id.maxAgeList);
+        ArrayAdapter<String> maxGradeAdapter = new ArrayAdapter<String>(UploadInternship.this,
+                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.ages));
+        maxGradeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        maxGradeSpinner.setAdapter(maxGradeAdapter);
 
         Spinner genderSpinner = findViewById(R.id.genderList);
         ArrayAdapter<String> genderAdapter = new ArrayAdapter<String>(UploadInternship.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.gender));
         genderAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         genderSpinner.setAdapter(genderAdapter);
-
-        Spinner raceSpinner = findViewById(R.id.raceList);
-        ArrayAdapter<String> raceAdapter = new ArrayAdapter<String>(UploadInternship.this,
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.races));
-        raceAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        raceSpinner.setAdapter(raceAdapter);
-
-        Spinner fieldSpinner = findViewById(R.id.fieldList);
-        ArrayAdapter<String> fieldAdapter = new ArrayAdapter<String>(UploadInternship.this,
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.fields));
-        fieldAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        fieldSpinner.setAdapter(fieldAdapter);
 
         Spinner incomeSpinner = findViewById(R.id.incomeList);
         ArrayAdapter<String> incomeAdapter = new ArrayAdapter<String>(UploadInternship.this,
@@ -87,6 +103,17 @@ public class UploadInternship extends AppCompatActivity {
                 endDate = new Date(year-1900, month, dayOfMonth);
             }
         });
+
+        if(Build.VERSION.SDK_INT>Build.VERSION_CODES.M)
+        internshipPic = (ImageView) findViewById(R.id.internshipPic);
+        uploadPictureButton = (Button) findViewById(R.id.uploadPictureButton);
+
+        uploadPictureButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     /**
@@ -100,27 +127,48 @@ public class UploadInternship extends AppCompatActivity {
         String name = nameField.getText().toString();
 
         //Save the company hosting the internship
-        Company company = new Company();
-
-        //EditText linkField = findViewById(R.id.linkToApplicationText);
-        //company.setLink(linkField.getText().toString());
-        //company = link
+        EditText companyNameField = findViewById(R.id.companyNameText);
+        Company company = new Company(companyNameField.getText().toString());
 
         //Save the cost of the internship
         EditText costField = findViewById(R.id.costText);
         String cost = costField.getText().toString();
 
-        //Save the target age
-        Spinner ageSpinner = findViewById(R.id.ageList);
-        String targetAge = ageSpinner.getSelectedItem().toString();
+        //Save the minimum age
+        Spinner minAgeSpinner = findViewById(R.id.minAgeList);
+        String minAge = minAgeSpinner.getSelectedItem().toString();
+
+        //Save the maximum age
+        Spinner maxAgeSpinner = findViewById(R.id.maxAgeList);
+        String maxAge = maxAgeSpinner.getSelectedItem().toString();
+
+        //Save the minimum age
+        Spinner minGradeSpinner = findViewById(R.id.minGradeList);
+        String minGrade= minGradeSpinner.getSelectedItem().toString();
+
+        //Save the maximum age
+        Spinner maxGradeSpinner = findViewById(R.id.maxGradeList);
+        String maxGrade = maxGradeSpinner.getSelectedItem().toString();
 
         //Save the target gender
         Spinner genderSpinner = findViewById(R.id.genderList);
         String targetGender = genderSpinner.getSelectedItem().toString();
 
-        //Save the target race
-        Spinner raceSpinner = findViewById(R.id.raceList);
-        String targetRace = raceSpinner.getSelectedItem().toString();
+        //Save the target race(s)
+        String targetRaces = " ";
+        CheckBox white = findViewById(R.id.whiteCaucasianCheckBox);
+        CheckBox black = findViewById(R.id.blackAfricanAmericanCheckBox);
+        CheckBox nativeA = findViewById(R.id.nativeAmericanOrAlaskaNativeCheckBox);
+        CheckBox asian = findViewById(R.id.asianPacificIslanderCheckBox);
+        CheckBox multi = findViewById(R.id.multiracialCheckBox);
+        CheckBox notA = findViewById(R.id.n_ARaceCheckBox);
+
+        racesArray = new CheckBox[]{white, black, nativeA, asian, multi, notA};
+        for (CheckBox check: racesArray){
+            if(check.isChecked())
+                targetRaces += check.getText() + ", ";
+        }
+        targetRaces = targetRaces.substring(0,targetRaces.lastIndexOf(','));
 
         //Save military experience
         Switch militarySwitch = findViewById(R.id.militarySwitch);
@@ -130,9 +178,33 @@ public class UploadInternship extends AppCompatActivity {
         Switch paidSwitch = findViewById(R.id.paidSwitch);
         Boolean paid = paidSwitch.isChecked();
 
-        //Save the field
-        Spinner fieldSpinner = findViewById(R.id.fieldList);
-        String field = fieldSpinner.getSelectedItem().toString();
+        //Save the field(s)
+        String fields = " ";
+        CheckBox bio = findViewById(R.id.biologyCheckBox);
+        CheckBox chem = findViewById(R.id.chemistryCheckBox);
+        CheckBox engin = findViewById(R.id.engineeringCheckBox);
+        CheckBox phys = findViewById(R.id.physicsCheckBox);
+        CheckBox compSci = findViewById(R.id.computerScienceCheckBox);
+        CheckBox music = findViewById(R.id.musicCheckBox);
+        CheckBox art = findViewById(R.id.artCheckBox);
+        CheckBox theatre = findViewById(R.id.theatreCheckBox);
+        CheckBox enviro = findViewById(R.id.environmentalScienceCheckBox);
+        CheckBox neuro = findViewById(R.id.neuroscienceCheckBox);
+        CheckBox med = findViewById(R.id.medicineCheckBox);
+        CheckBox writ = findViewById(R.id.writingCheckBox);
+        CheckBox business = findViewById(R.id.businessCheckBox);
+        CheckBox gov = findViewById(R.id.governmentPoliticsCheckBox);
+        CheckBox marketing = findViewById(R.id.marketingCheckBox);
+        CheckBox math = findViewById(R.id.mathCheckBox);
+        CheckBox other = findViewById(R.id.otherFieldCheckBox);
+
+       fieldsArray = new CheckBox[]{bio, chem, engin, phys, compSci, music, art, theatre, enviro, neuro,
+               med, writ, business, gov, marketing, math, other};
+        for (CheckBox check: fieldsArray){
+            if(check.isChecked())
+                fields += check.getText() + ", ";
+        }
+        fields = fields.substring(0,fields.lastIndexOf(','));
 
         //Save the location
         EditText locationField = findViewById(R.id.locationText);
@@ -155,11 +227,10 @@ public class UploadInternship extends AppCompatActivity {
         String description = descriptionField.getText().toString();
 
 
-
-
         Internship i = new Internship(name, applicationDeadline, startDate, endDate, company, cost,
-                targetAge, "min age", "max age", "min gr", "max gr",targetGender, targetRace, militaryExperience, paid, field,
-                location, targetIncome, preReqs, appLink, description);
+                                    minAge, maxAge, minGrade, maxGrade, targetGender, targetRaces,
+                                    militaryExperience, paid, fields, location, targetIncome,
+                                    preReqs, appLink, description);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference(i.getName());
