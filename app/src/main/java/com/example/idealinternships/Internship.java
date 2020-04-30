@@ -62,36 +62,25 @@ public class Internship {
 	}
 
 
-	/**
-	 *
-	 * @param name the name of the internship
-	 * @param applicationDeadline the given application deadline
-	 * @param startDate the given start date
-	 * @param endDate the given end date
-	 * @param company the company hosting the internship
-	 * @param cost the cost
-	 * @param targetGender the target gender
-	 * @param targetRaces the target race
-	 * @param militaryExperience military experience
-	 */
+
     /**
      * Constructs an Internship object with  a given application deadline,
      * start date, end date, company, cost, target age, target gender, target race,
      * 	militaryExperience, fields, location, and targetLocation
-     * @param name
-     * @param applicationDeadline
-     * @param startDate
-     * @param endDate
-     * @param company
-     * @param cost
-     * @param minAge
-     * @param maxAge
-     * @param minGrade
-     * @param maxGrade
-     * @param targetGender
-     * @param targetRaces
-     * @param militaryExperience
-     * @param paid
+     * @param name the name of the internship
+     * @param applicationDeadline the given application deadline
+     * @param startDate the given start date
+     * @param endDate the given end date
+     * @param company the company hosting the internship
+     * @param cost the cost
+     * @param minAge the minimum age for this internship
+     * @param maxAge th maximum age for this internship
+     * @param minGrade the minimum age for this internship
+     * @param maxGrade the maximum age for this internship
+     * @param targetGender the target gender
+     * @param targetRaces the target race
+     * @param militaryExperience military experience
+     * @param paid whether or not this is a paid internship
      * @param fields the internship fields
      * @param location the internship location
      * @param targetIncome the target applicant income
