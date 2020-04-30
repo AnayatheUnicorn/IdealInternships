@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -19,7 +18,6 @@ import android.widget.Switch;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -160,10 +158,11 @@ public class UploadInternship extends AppCompatActivity {
         CheckBox black = findViewById(R.id.blackAfricanAmericanCheckBox);
         CheckBox nativeA = findViewById(R.id.nativeAmericanOrAlaskaNativeCheckBox);
         CheckBox asian = findViewById(R.id.asianPacificIslanderCheckBox);
+        CheckBox lat = findViewById(R.id.latinoaCheckBox);
         CheckBox multi = findViewById(R.id.multiracialCheckBox);
-        CheckBox notA = findViewById(R.id.n_ARaceCheckBox);
+        CheckBox notA = findViewById(R.id.allRacesCheckBox);
 
-        racesArray = new CheckBox[]{white, black, nativeA, asian, multi, notA};
+        racesArray = new CheckBox[]{white, black, nativeA, asian, lat, multi, notA};
         for (CheckBox check: racesArray){
             if(check.isChecked())
                 targetRaces += check.getText() + ", ";
