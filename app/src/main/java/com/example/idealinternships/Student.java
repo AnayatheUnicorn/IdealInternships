@@ -6,6 +6,7 @@ public class Student {
     //Data
     private String firstName;
     private String lastName;
+    //private int imageResource;
     //private String studentEmail;
     //private String password;
     private String profileBio;
@@ -22,7 +23,7 @@ public class Student {
     private boolean notifications;
 
     //Constructor
-    //String email, String pass (to add in later)
+    //String email, String pass (to add in later), int image
 
     /**
      * Constructs a Student class with information to sort them with an internship
@@ -46,6 +47,7 @@ public class Student {
                    Date endDate, boolean push){
         firstName = first;
         lastName = last;
+        //imageResource = image;
         //studentEmail = email;
         //password = pass;
         profileBio = bio;
@@ -95,6 +97,18 @@ public class Student {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    //**
+     /* A method to get the number which corresponds to the image
+     /* @return the integer corresponding to the drawable
+     /*/
+    //public int getImageResource(){return imageResource;}
+
+    /**
+    / * A method to set the number corresponding to an image
+    / * @param image the new image corresponding integer
+    / */
+    //public void setImageResource(int image){this.imageResource = image;}
 
     /**
      *A method to get the student's email

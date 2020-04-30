@@ -11,6 +11,7 @@ import java.util.Date;
 public class Internship {
 	//Data
     private String name;
+    private int imageResource;
 	private Date applicationDeadline;
 	private Date startDate;
 	private Date endDate;
@@ -59,6 +60,7 @@ public class Internship {
 		preReqs = "";
 		internshipLink = "";
 		internshipDescription = "";
+		imageResource = 0;
 	}
 
 
@@ -93,6 +95,7 @@ public class Internship {
                       boolean militaryExperience, boolean paid, String fields, String location, String targetIncome,
 					  String preReqs, String internshipLink, String internshipDescription) {
 		this.name = name;
+		this.imageResource = image;
 	    this.applicationDeadline = applicationDeadline;
 		this.startDate = startDate;
 		this.endDate = endDate;
@@ -131,6 +134,11 @@ public class Internship {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+
+    public int getImageResource(){ return imageResource;}
+
+    public void setImageResource(int newResource){ this.imageResource = newResource;}
 
 	/**
 	 * Get the application deadline of the internship
