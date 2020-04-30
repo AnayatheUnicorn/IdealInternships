@@ -100,7 +100,8 @@ public class Internship {
      * @param internshipDescription the internship Description
      */
 	public Internship(String name, Date applicationDeadline, Date startDate, Date endDate, Company company, String cost,
-                      String minAge, String maxAge, String minGrade, String maxGrade, String targetGender, String targetRaces, boolean militaryExperience, boolean paid, String fields, String location, String targetIncome,
+                      String minAge, String maxAge, String minGrade, String maxGrade, String targetGender, String targetRaces,
+                      boolean militaryExperience, boolean paid, String fields, String location, String targetIncome,
 					  String preReqs, String internshipLink, String internshipDescription) {
 		this.name = name;
 	    this.applicationDeadline = applicationDeadline;
