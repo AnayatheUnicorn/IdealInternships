@@ -223,16 +223,22 @@
                     android:text="@string/asianPacificIslanderStr" />
 
                 <CheckBox
+                    android:id="@+id/latinoaCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/latinoaStr" />
+
+                <CheckBox
                     android:id="@+id/multiracialCheckBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/multiracialStr" />
 
                 <CheckBox
-                    android:id="@+id/n_ARaceCheckBox"
+                    android:id="@+id/allRacesCheckBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/noneStr" />
+                    android:text="@string/allStr" />
             </LinearLayout>
 
             <TextView
