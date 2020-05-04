@@ -11,6 +11,7 @@ public class Student {
     //private String password;
     private String profileBio;
     private String studentAge;
+    private String studentGrade;
     private String studentGender;
     private String studentRace;
     private String studentSchool;
@@ -42,7 +43,7 @@ public class Student {
      * @param endDate the end date for the window they are available for an internship
      * @param push whether or not they want push notifications
      */
-    public Student(String first, String last, String bio, String age, String gender, String race,
+    public Student(String first, String last, String bio, String age, String grade, String gender, String race,
                    String school, boolean milAssociation, String preferredField, String location, String income, Date startDate,
                    Date endDate, boolean push){
         firstName = first;
@@ -52,6 +53,7 @@ public class Student {
         //password = pass;
         profileBio = bio;
         studentAge = age;
+        studentGrade = grade;
         studentGender = gender;
         studentRace = race;
         studentSchool = school;
@@ -165,6 +167,23 @@ public class Student {
     public void setStudentAge(String studentAge) {
         this.studentAge = studentAge;
     }
+
+    /*
+     *A method to get the student's grade
+     * @return the student's grade as a String
+     */
+    public String getStudentGrade() {
+        return studentGrade;
+    }
+
+    /*
+     *A method to change the student's grade
+     * @param studentAge new student grade
+     */
+    public void setStudentGrade(String studentGrade) {
+        this.studentGrade = studentGrade;
+    }
+
 
     /*
      *A method to get the student's gender

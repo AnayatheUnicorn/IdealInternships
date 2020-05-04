@@ -10,7 +10,6 @@ import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
-import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -37,6 +36,12 @@ public class StudentEnterInfo extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.ages));
         ageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ageSpinner.setAdapter(ageAdapter);
+
+        Spinner gradeSpinner = findViewById(R.id.gradeDropdown);
+        ArrayAdapter<String> gradeAdapter = new ArrayAdapter<String>(StudentEnterInfo.this,
+                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.grade));
+        gradeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        gradeSpinner.setAdapter(gradeAdapter);
 
         Spinner genderSpinner = findViewById(R.id.genderDropdown);
         ArrayAdapter<String> genderAdapter = new ArrayAdapter<String>(StudentEnterInfo.this,
@@ -99,6 +104,9 @@ public class StudentEnterInfo extends AppCompatActivity {
         Spinner ageSpinner = findViewById(R.id.ageDropdown);
         String stuAge = ageSpinner.getSelectedItem().toString();
 
+        Spinner gradeSpinner = findViewById(R.id.gradeDropdown);
+        String stuGrade = gradeSpinner.getSelectedItem().toString();
+
         Spinner genderSpinner = findViewById(R.id.genderDropdown);
         String stuGender = genderSpinner.getSelectedItem().toString();
 
@@ -123,7 +131,7 @@ public class StudentEnterInfo extends AppCompatActivity {
         Switch notificationSwitch = findViewById(R.id.notificationsSwitch);
         Boolean stuNotifications = notificationSwitch.isChecked();
 
-        s = new Student(stuFirst, stuLast, stuBio, stuAge, stuGender, stuRace, stuSchool, stuMilitary,
+        s = new Student(stuFirst, stuLast, stuBio, stuAge, stuGrade, stuGender, stuRace, stuSchool, stuMilitary,
                 stuField, stuLocation, stuIncome, startDate, endDate, stuNotifications);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();

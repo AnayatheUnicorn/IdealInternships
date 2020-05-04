@@ -95,7 +95,6 @@ public class Internship {
                       boolean militaryExperience, boolean paid, String fields, String location, String targetIncome,
 					  String preReqs, String internshipLink, String internshipDescription) {
 		this.name = name;
-		this.imageResource = image;
 	    this.applicationDeadline = applicationDeadline;
 		this.startDate = startDate;
 		this.endDate = endDate;
