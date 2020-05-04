@@ -100,6 +100,10 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_company_posted_internships">CompanyPostedInternshipsActivity
     </string>
+    <string name="currentPostingsStr">Current Postings</string>
+    <string name="editStr">EDIT</string>
+    <string name="seeMoreStr">See More</string>
+    <string name="gradeStr">Grade</string>
 
     //////////////////////////////////////////// String Arrays /////////////////////////////////////
     <string-array name="ages">
