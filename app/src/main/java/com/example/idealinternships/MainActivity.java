@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         uploadInternshipFrag = new UploadInternshipFragment();
+        Log.e("testing","hello");
 
 
         //FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -70,6 +71,11 @@ public class MainActivity extends AppCompatActivity {
     public void goToUploadInternshipPage(View v) {
        Intent intent = new Intent(this, UploadInternship.class);
        startActivity(intent);
+    }
+
+    public void goToStudentInterface(View v) {
+        Intent intent = new Intent(this, StudentUiDefault.class);
+        startActivity(intent);
     }
 
 

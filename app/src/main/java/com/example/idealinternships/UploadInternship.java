@@ -235,5 +235,7 @@ public class UploadInternship extends AppCompatActivity {
         DatabaseReference myRef = database.getReference(i.getName());
         myRef.setValue(i);
 
+        Log.e("testing","hello");
+
     }
 }

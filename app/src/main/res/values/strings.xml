@@ -82,7 +82,7 @@
     <string name="manageStr">Manage</string>
     <string name="myAccStr">My Account</string>
     <string name="enterCompanyInfoStr">Enter Company Info</string>
-    <string name = "goToMyAccCompany">Go to the Company Interface!</string>
+    <string name="goToMyAccCompany">Go to the Company Interface!</string>
 
     <string name="schoolStr">School</string>
     <string name="enterSchoolHintStr">Enter your school</string>
@@ -103,16 +103,16 @@
 
     //////////////////////////////////////////// String Arrays /////////////////////////////////////
     <string-array name="ages">
-    <item>--</item>
-    <item>13</item>
-    <item>14</item>
-    <item>15</item>
-    <item>16</item>
-    <item>17</item>
-    <item>18</item>
-    <item>19</item>
-    <item>Younger than 13</item>
-    <item>Older than 19</item>
+        <item>--</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>Younger than 13</item>
+        <item>Older than 19</item>
         <item>N/A</item>
     </string-array>
     <string-array name="gender">
@@ -163,6 +163,9 @@
         <item>Government/Politics</item>
         <item>Marketing</item>
         <item>Math</item>
+        <item>Research</item>
+        <item>Communications</item>
+        <item>Science</item>
     </string-array>
 
     <string-array name="incomes">

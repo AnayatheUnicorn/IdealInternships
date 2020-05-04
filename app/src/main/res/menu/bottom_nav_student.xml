@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home_student"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/nav_search_student"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="Search"/>
+
+    <item
+        android:id="@+id/nav_starred_student"
+        android:icon="@drawable/ic_star_black_24dp"
+        android:title="Saved"/>
+
+    <item
+        android:id="@+id/nav_my_acc_student"
+        android:icon="@drawable/ic_account_circle_black_24dp"
+        android:title="My Account"/>
+
+
+</menu>
