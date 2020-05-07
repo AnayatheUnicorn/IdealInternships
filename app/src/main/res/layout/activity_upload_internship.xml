@@ -494,6 +494,30 @@
                     android:text="@string/mathStr" />
 
                 <CheckBox
+                    android:id="@+id/researchCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/researchStr" />
+
+                <CheckBox
+                    android:id="@+id/scienceCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/scienceStr" />
+
+                <CheckBox
+                    android:id="@+id/historyCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/historyStr" />
+
+                <CheckBox
+                    android:id="@+id/communicationsCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/communicationsStr" />
+
+                <CheckBox
                     android:id="@+id/otherFieldCheckBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

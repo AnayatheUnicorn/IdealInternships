@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -41,11 +42,15 @@ public class CompanyEnterInfoActivity extends AppCompatActivity {
         EditText companyDescriptionRaw = findViewById(R.id.companyBioEditable);
         EditText companyLocationRaw = findViewById(R.id.companyLocationEditable);
         AutoCompleteTextView companyLinkRaw = findViewById(R.id.companyLinkEditable);
+        ImageView companyPFPRaw = findViewById(R.id.companyChoosePFP);
         c = new Company(companyNameRaw.getText().toString(),companyDescriptionRaw.getText().toString(),companyLocationRaw.getText().toString(),companyLinkRaw.getText().toString());
 
+       // DatabaseReference usersRef = ref.child("users");
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference(c.getName());
-        myRef.setValue(c);
+        DatabaseReference ref = database.getReference("Companies");
+        DatabaseReference cRef = ref.child(c.getName());
+        cRef.setValue(c);
 
 
         //code to open the company upload internship page
@@ -54,4 +59,7 @@ public class CompanyEnterInfoActivity extends AppCompatActivity {
 
     }
 
+    //public void selectCompanyPFP(View v){
+        //imageView.setImageResource
+   // }
 }

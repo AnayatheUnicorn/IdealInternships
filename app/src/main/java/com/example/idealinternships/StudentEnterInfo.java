@@ -135,8 +135,9 @@ public class StudentEnterInfo extends AppCompatActivity {
                 stuField, stuLocation, stuIncome, startDate, endDate, stuNotifications);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference(s.getLastName() + ", " + s.getFirstName());
-        myRef.setValue(s);
+        DatabaseReference ref = database.getReference("Students");
+        DatabaseReference sRef = database.getReference(s.getLastName() + ", " + s.getFirstName());
+        sRef.setValue(s);
 
         //Toast.makeText(this, s.toString(), Toast.LENGTH_SHORT).show();
     }

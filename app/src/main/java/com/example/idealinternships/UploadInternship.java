@@ -195,10 +195,14 @@ public class UploadInternship extends AppCompatActivity {
         CheckBox gov = findViewById(R.id.governmentPoliticsCheckBox);
         CheckBox marketing = findViewById(R.id.marketingCheckBox);
         CheckBox math = findViewById(R.id.mathCheckBox);
+        CheckBox research = findViewById(R.id.researchCheckBox);
+        CheckBox science = findViewById(R.id.scienceCheckBox);
+        CheckBox history = findViewById(R.id.historyCheckBox);
+        CheckBox communications = findViewById(R.id.communicationsCheckBox);
         CheckBox other = findViewById(R.id.otherFieldCheckBox);
 
        fieldsArray = new CheckBox[]{bio, chem, engin, phys, compSci, music, art, theatre, enviro, neuro,
-               med, writ, business, gov, marketing, math, other};
+               med, writ, business, gov, marketing, math, research, science, history, communications, other};
         for (CheckBox check: fieldsArray){
             if(check.isChecked())
                 fields += check.getText() + ", ";
@@ -232,10 +236,11 @@ public class UploadInternship extends AppCompatActivity {
                                     preReqs, appLink, description);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference(i.getName());
-        myRef.setValue(i);
+        DatabaseReference myRef = database.getReference("Internships");
+        DatabaseReference iRef = myRef.child(i.getName());
+        iRef.setValue(i);
 
-        Log.e("testing","hello");
+
 
     }
 }

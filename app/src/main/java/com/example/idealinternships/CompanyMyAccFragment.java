@@ -24,7 +24,7 @@ public class CompanyMyAccFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInsatnceState){
-        return inflater.inflate(R.layout.activity_upload_internship ,container,false);
+        return inflater.inflate(R.layout.company_my_acc_fragment ,container,false);
     }
 
     

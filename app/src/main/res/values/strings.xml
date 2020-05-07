@@ -57,6 +57,10 @@
     <string name="governmentPoliticsStr">Government/Politics</string>
     <string name="marketingStr">Marketing</string>
     <string name="mathStr">Math</string>
+    <string name="communicationsStr">Communications</string>
+    <string name="researchStr">Research</string>
+    <string name="scienceStr">Science</string>
+    <string name="historyStr">History</string>
     <string name="otherFieldStr">Other Field Explained in the Description</string>
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -73,6 +77,7 @@
     <string name="enterCompanyLocationStr">Enter company location</string>
     <string name="companyWebsiteStr">Company Website</string>
     <string name="enterCompanyWebsiteStr">Enter company website</string>
+    <string name="selectCompanyPFPText">Company Picture</string>
     <string name="save">SAVE</string>
     <string name="ageStr">Age</string>
     <string name="minAgeStr">Minimum Age (If applicable)</string>
@@ -83,6 +88,9 @@
     <string name="myAccStr">My Account</string>
     <string name="enterCompanyInfoStr">Enter Company Info</string>
     <string name="goToMyAccCompany">Go to the Company Interface!</string>
+    <string name="selectImg">Select Image</string>
+
+
 
     <string name="schoolStr">School</string>
     <string name="enterSchoolHintStr">Enter your school</string>
