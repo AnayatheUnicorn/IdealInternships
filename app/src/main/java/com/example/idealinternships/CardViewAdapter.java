@@ -47,7 +47,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.CardVi
 
         holder.internshipPicView.setImageResource(i.getImageResource());
         holder.nameTextView.setText(i.getName());
-        //holder.descriptionTextView.setText(i.getDescription());
+        holder.descriptionTextView.setText(i.getInternshipDescription());
     }
 
     @Override

@@ -35,18 +35,22 @@ public class ManageFragment extends Fragment {
     private RecyclerView recycler;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
+    private View v;
+    private ArrayList<Internship> internshipsList;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup conatiner, @Nullable Bundle savedInsatnceState){
 
-        View v = inflater.inflate(R.layout.uploaded_internships_fragment, conatiner,false);
+        v = inflater.inflate(R.layout.uploaded_internships_fragment, conatiner,false);
 
-        final ArrayList<Internship> internshipsList = new ArrayList<>();
+        internshipsList = new ArrayList<Internship>();
 
         // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference();
+        DatabaseReference myRef = database.getReference("Internships");
+
+        Log.d("database", "got");
 
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
@@ -57,6 +61,8 @@ public class ManageFragment extends Fragment {
                 for(DataSnapshot ds: dataSnapshot.getChildren()){
                     Internship i = ds.getValue(Internship.class);
                     internshipsList.add(i);
+                    adapter.notifyDataSetChanged();
+                    Log.d("internship",internshipsList.toString());
                 }
             }
 
@@ -66,6 +72,8 @@ public class ManageFragment extends Fragment {
                 Log.w("MainActivity", "Failed to read value.", error.toException());
             }
         });
+
+
 
         recycler = v.findViewById(R.id.manageInternshipsRecyclerView);
         layoutManager = new LinearLayoutManager(getContext());
