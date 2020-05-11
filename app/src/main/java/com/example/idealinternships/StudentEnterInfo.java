@@ -3,6 +3,7 @@ package com.example.idealinternships;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -134,10 +135,19 @@ public class StudentEnterInfo extends AppCompatActivity {
         s = new Student(stuFirst, stuLast, stuBio, stuAge, stuGrade, stuGender, stuRace, stuSchool, stuMilitary,
                 stuField, stuLocation, stuIncome, startDate, endDate, stuNotifications);
 
+       /**
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference("Students");
         DatabaseReference sRef = database.getReference(s.getLastName() + ", " + s.getFirstName());
+        sRef.setValue(s);*/
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference("Students");
+        DatabaseReference sRef = ref.child(s.getLastName() + ", " + s.getFirstName());
         sRef.setValue(s);
+
+        Intent intent = new Intent(this, StudentUiDefault.class);
+        startActivity(intent);
 
         //Toast.makeText(this, s.toString(), Toast.LENGTH_SHORT).show();
     }

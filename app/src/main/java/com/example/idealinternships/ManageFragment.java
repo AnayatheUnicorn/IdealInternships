@@ -32,10 +32,10 @@ public class ManageFragment extends Fragment {
      * @return the manage interships view
      */
 
+    private View v;
     private RecyclerView recycler;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
-    private View v;
     private ArrayList<Internship> internshipsList;
 
     @Nullable

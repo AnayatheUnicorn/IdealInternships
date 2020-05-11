@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InternshipSeeMore"></activity>
+        <activity android:name=".TestSearch"></activity>
+        <activity android:name=".InternshipSeeMore" />
         <activity android:name=".CompanyMyAccActivity" />
-        <activity android:name=".StudentUiDefault"></activity>
+        <activity android:name=".StudentUiDefault" />
         <activity android:name=".CompanyEnterInfoActivity" />
         <activity android:name=".StudentEnterInfo" />
         <activity android:name=".UploadInternship" />

@@ -78,6 +78,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToTestSearch(View v) {
+        Intent intent = new Intent(this, TestSearch.class);
+        startActivity(intent);
+    }
+
 
 
 }
