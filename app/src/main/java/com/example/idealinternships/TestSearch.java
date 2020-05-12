@@ -43,11 +43,10 @@ public class TestSearch extends AppCompatActivity {
         //setHasOptionsMenu(true)
 
 
-
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Internships");
         internshipsList = new ArrayList<Internship>();
-        internshipFull = new ArrayList<Internship>();
+        //internshipFull = new ArrayList<Internship>();
 
 
         Log.d("database", "got");
@@ -62,9 +61,9 @@ public class TestSearch extends AppCompatActivity {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     Internship i = ds.getValue(Internship.class);
                     internshipsList.add(i);
-                    internshipFull.add(i);
+                    //internshipFull.add(i);
                     adapter.notifyDataSetChanged();
-                    Log.d("internship", internshipsList.toString());
+                    Log.d("searching", internshipsList.toString());
                 }
 
             }
@@ -75,6 +74,8 @@ public class TestSearch extends AppCompatActivity {
                 Log.w("MainActivity", "Failed to read value.", error.toException());
             }
         });
+
+        Log.d("searching", "after error" + internshipsList.toString());
 
 
         recycler = findViewById(R.id.manageInternshipsRecyclerView);
@@ -107,7 +108,10 @@ public class TestSearch extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String s) {
+                Log.d("searching","text change");
                 adapter.getFilter().filter(s);
+                adapter.notifyDataSetChanged();
+                Log.d("searching","text change successful");
                 return false;
             }
         });

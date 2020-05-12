@@ -31,6 +31,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.CardVi
 
     public CardViewAdapter(ArrayList<Internship> internshipList){
         internships = internshipList;
+
     }
 
     @NonNull

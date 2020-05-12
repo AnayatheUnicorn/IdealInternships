@@ -1,5 +1,6 @@
 package com.example.idealinternships;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +37,10 @@ public class CardViewAdapterSearch extends RecyclerView.Adapter<CardViewAdapterS
 
     public CardViewAdapterSearch(ArrayList<Internship> internship){
         this.internships = internship;
-        internshipsFull = new ArrayList<>(internships);
+        Log.d("searching", "original"+ internships.toString());
+        internshipsFull = new ArrayList(internships);
+        Log.d("searching", "orig" + internships.toString());
+        Log.d("searching", "new:" + internshipsFull.toString());
 
 
     }
@@ -77,16 +81,23 @@ public class CardViewAdapterSearch extends RecyclerView.Adapter<CardViewAdapterS
 
             if( charSequence == null || charSequence.length() == 0){
                 filteredList.addAll(internshipsFull); //Change this to show results of default filters
+                Log.d("searching", "null search bar");
             }
             else {
                 String filterPattern = charSequence.toString().toLowerCase().trim();
+                Log.d("searching", filterPattern);
                 for(Internship i : internshipsFull){
                     if(i.getName().toLowerCase().contains(filterPattern)){
                         filteredList.add(i);
+                        //Log.d("searching","filter pattern");
+                        Log.d("searching", filterPattern);
+                        Log.d("searching", i.getName());
+                        Log.d("searching", internshipsFull.toString());
                     }
                 }
             }
 
+            Log.d("searching",filteredList.toString());
             FilterResults results = new FilterResults();
             results.values = filteredList;
             return results;
@@ -98,6 +109,7 @@ public class CardViewAdapterSearch extends RecyclerView.Adapter<CardViewAdapterS
             internships.clear();
             internships.addAll((ArrayList) filterResults.values);
             notifyDataSetChanged();
+            Log.d("searching", "published");
         }
     };
 }
