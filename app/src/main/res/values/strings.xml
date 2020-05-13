@@ -16,6 +16,8 @@
     <string name="maxGradeStr">Maximum Grade(If applicable) </string>
     <string name="locationStr">Location</string>
     <string name="genderStr">Gender</string>
+    <string name="companyStr">Company</string>
+    <string name="studentStr">Student</string>
 
     ///////////////////////////////////////////// Race Strings /////////////////////////////////////
     <string name="raceStr">Race</string>
