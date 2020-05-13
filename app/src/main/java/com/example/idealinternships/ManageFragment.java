@@ -62,7 +62,7 @@ public class ManageFragment extends Fragment {
                     Internship i = ds.getValue(Internship.class);
                     internshipsList.add(i);
                     adapter.notifyDataSetChanged();
-                    Log.d("internship",internshipsList.toString());
+                    //Log.d("manage class",i.getName());
                 }
             }
 
@@ -75,7 +75,7 @@ public class ManageFragment extends Fragment {
 
 
 
-        recycler = v.findViewById(R.id.manageInternshipsRecyclerView);
+        recycler = v.findViewById(R.id.manageinternshipsRecyclerView);
         layoutManager = new LinearLayoutManager(getContext());
         adapter = new CardViewAdapter(internshipsList);
         recycler.setLayoutManager(layoutManager);

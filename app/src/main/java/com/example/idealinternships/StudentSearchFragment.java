@@ -24,7 +24,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -87,9 +86,9 @@ public class StudentSearchFragment extends Fragment implements SearchView.OnQuer
 
 
 
-        recycler = v.findViewById(R.id.manageInternshipsRecyclerView);
+        //recycler = v.findViewById(R.id.searchinternshipsRecyclerView);
         layoutManager = new LinearLayoutManager(getContext());
-        adapter = new CardViewAdapterSearch(internshipsList);
+        adapter = new CardViewAdapterSearch(internshipsList, internshipFull);
         recycler.setLayoutManager(layoutManager);
         recycler.setAdapter(adapter);
 

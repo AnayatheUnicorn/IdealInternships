@@ -35,14 +35,9 @@ public class CardViewAdapterSearch extends RecyclerView.Adapter<CardViewAdapterS
         }
     }
 
-    public CardViewAdapterSearch(ArrayList<Internship> internship){
+    public CardViewAdapterSearch(ArrayList<Internship> internship, ArrayList<Internship> internshipFull){
         this.internships = internship;
-        Log.d("searching", "original"+ internships.toString());
-        internshipsFull = new ArrayList(internships);
-        Log.d("searching", "orig" + internships.toString());
-        Log.d("searching", "new:" + internshipsFull.toString());
-
-
+        this.internshipsFull = internshipFull;
     }
 
 
@@ -87,7 +82,7 @@ public class CardViewAdapterSearch extends RecyclerView.Adapter<CardViewAdapterS
                 String filterPattern = charSequence.toString().toLowerCase().trim();
                 Log.d("searching", filterPattern);
                 for(Internship i : internshipsFull){
-                    if(i.getName().toLowerCase().contains(filterPattern)){
+                    if(i.getName().toLowerCase().contains(filterPattern) || i.getFields().toLowerCase().contains(filterPattern)){
                         filteredList.add(i);
                         //Log.d("searching","filter pattern");
                         Log.d("searching", filterPattern);
