@@ -21,70 +21,81 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.129" />
 
-    <Button
-        android:id="@+id/goToCompanyInfo"
+    <TextView
+        android:id="@+id/companyLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="goToEnterCompanyInfoPage"
-        android:text="@string/enterCompanyInfoStr"
+        android:layout_marginTop="16dp"
+        android:text="@string/companyStr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainScreenText" />
 
     <Button
-        android:id="@+id/goToStudentInfoForm"
+        android:id="@+id/goToCompanyInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="goToStudentInfoPage"
-        android:text="@string/enterStudentInfoStr"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goToCompanyInfo" />
-
-    <Button
-        android:id="@+id/goToMyAccCompany"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="goToMyAccCompanyPage"
-        android:text="@string/goToMyAccCompany"
+        android:layout_marginTop="8dp"
+        android:onClick="goToEnterCompanyInfoPage"
+        android:text="@string/enterCompanyInfoStr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goToStudentInfoForm" />
+        app:layout_constraintTop_toBottomOf="@+id/companyLabel" />
 
-    <Button
-        android:id="@+id/goToUpload"
+    <TextView
+        android:id="@+id/studentLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:onClick="goToUploadInternshipPage"
-        android:text="@string/uploadAnInternshipStr"
+        android:layout_marginTop="16dp"
+        android:text="@string/studentStr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/goToMyAccCompany" />
 
     <Button
+        android:id="@+id/goToStudentInfoForm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="goToStudentInfoPage"
+        android:text="@string/enterStudentInfoStr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/studentLabel" />
+
+    <Button
+        android:id="@+id/goToMyAccCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="goToMyAccCompanyPage"
+        android:text="@string/goToMyAccCompany"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goToCompanyInfo" />
+
+    <Button
         android:id="@+id/goToStudentInterface"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:onClick="goToStudentInterface"
         android:text="go to student interface"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goToUpload" />
+        app:layout_constraintTop_toBottomOf="@+id/goToStudentInfoForm" />
 
     <Button
         android:id="@+id/goToTestSearchButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="255dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="8dp"
         android:onClick="goToTestSearch"
         android:text="go to test search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/goToStudentInterface" />
 
