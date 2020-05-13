@@ -1,7 +1,6 @@
 package com.example.idealinternships;
 
 
-import android.content.ContentQueryMap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -22,11 +21,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
 public class TestSearch extends AppCompatActivity {
 
     private View v;
@@ -46,7 +40,7 @@ public class TestSearch extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Internships");
         internshipsList = new ArrayList<Internship>();
-        //internshipFull = new ArrayList<Internship>();
+        internshipFull = new ArrayList<Internship>();
 
 
         Log.d("database", "got");
@@ -61,9 +55,9 @@ public class TestSearch extends AppCompatActivity {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     Internship i = ds.getValue(Internship.class);
                     internshipsList.add(i);
-                    //internshipFull.add(i);
+                    internshipFull.add(i);
                     adapter.notifyDataSetChanged();
-                    Log.d("searching", internshipsList.toString());
+                    Log.d("searching", "notify" + internshipsList.toString());
                 }
 
             }
@@ -75,12 +69,9 @@ public class TestSearch extends AppCompatActivity {
             }
         });
 
-        Log.d("searching", "after error" + internshipsList.toString());
-
-
-        recycler = findViewById(R.id.manageInternshipsRecyclerView);
+        recycler = findViewById(R.id.searchInternshipsRecyclerView);
         layoutManager = new LinearLayoutManager(this);
-        adapter = new CardViewAdapterSearch(internshipsList);
+        adapter = new CardViewAdapterSearch(internshipsList, internshipFull);
         recycler.setLayoutManager(layoutManager);
         recycler.setAdapter(adapter);
 
