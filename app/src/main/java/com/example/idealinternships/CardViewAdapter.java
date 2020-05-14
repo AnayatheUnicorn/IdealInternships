@@ -1,5 +1,9 @@
+/**
+ * This class handles the card view for companies to manage the internships that they have posted
+ */
 package com.example.idealinternships;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +25,10 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.CardVi
         public TextView nameTextView;
         public TextView descriptionTextView;
 
+        /**
+         * Sets values to each field in the card
+         * @param itemView the view
+         */
         public CardViewHolder(@NonNull View itemView) {
             super(itemView);
             internshipPicView = itemView.findViewById(R.id.internshipPic);
@@ -29,11 +37,22 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.CardVi
         }
     }
 
+    /**
+     * Constructs a card view adapter object and sets it to an array list of internships
+     * @param internshipList the list of internships
+     */
     public CardViewAdapter(ArrayList<Internship> internshipList){
         internships = internshipList;
+        Log.d("searching", "anaya"+internships.toString());
 
     }
 
+    /**
+     *
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @NonNull
     @Override
     public CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

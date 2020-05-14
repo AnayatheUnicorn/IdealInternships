@@ -31,6 +31,9 @@ public class TestSearch extends AppCompatActivity {
     private ArrayList internshipFull;
 
     @Override
+    /**
+     * Sets the screen to the search screen
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_search);
@@ -49,6 +52,9 @@ public class TestSearch extends AppCompatActivity {
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
+            /**
+             * Gets internships from Firebase and put them into two array lists
+             */
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
@@ -62,6 +68,10 @@ public class TestSearch extends AppCompatActivity {
 
             }
 
+            /**
+             * Indicated an error with accessing Firebase
+             * @param error the error
+             */
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
@@ -82,6 +92,11 @@ public class TestSearch extends AppCompatActivity {
     }
 
 
+    /**
+     * Puts the search bar on the screen
+     * @param menu the search bar as a menu
+     * @return true
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         super.onCreateOptionsMenu(menu);
@@ -92,11 +107,22 @@ public class TestSearch extends AppCompatActivity {
         MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+            /**
+             * When the user presses enter while searching
+             * @param s the string in the search bar
+             * @return false
+             */
             @Override
             public boolean onQueryTextSubmit(String s) {
                 return false;
             }
 
+            /**
+             * Adjusts the internships desplayed on screen based on what is being searched
+             * @param s the string in the search bar
+             * @return false
+             */
             @Override
             public boolean onQueryTextChange(String s) {
                 Log.d("searching","text change");
@@ -113,6 +139,4 @@ public class TestSearch extends AppCompatActivity {
 
 
 }
-
-
 

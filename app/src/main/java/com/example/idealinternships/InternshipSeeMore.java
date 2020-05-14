@@ -8,6 +8,10 @@ import android.widget.TextView;
 
 public class InternshipSeeMore extends AppCompatActivity {
 
+    /**
+     * Opens the entire internship from a card view
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

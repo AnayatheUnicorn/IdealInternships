@@ -45,7 +45,7 @@ public class CardViewAdapterSearch extends RecyclerView.Adapter<CardViewAdapterS
     @NonNull
     @Override
     public CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.internship_cardview, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.internship_cardview_student, parent, false);
         CardViewHolder cvh = new CardViewHolder(v);
         return cvh;
     }
@@ -65,11 +65,19 @@ public class CardViewAdapterSearch extends RecyclerView.Adapter<CardViewAdapterS
     }
 
     @Override
+    /**
+     * Gets the filter used to alter the results
+     */
     public Filter getFilter() {
         return exampleFilter;
     }
 
     private Filter exampleFilter = new Filter() {
+        /**
+         * adds internships to an array list if they match what the user types in the search bar
+         * @param charSequence what the user types in the search bar
+         * @return the internships that satisfy what the user searched for
+         */
         @Override
         protected FilterResults performFiltering(CharSequence charSequence) {
             ArrayList<Internship> filteredList = new ArrayList<>();
@@ -98,6 +106,11 @@ public class CardViewAdapterSearch extends RecyclerView.Adapter<CardViewAdapterS
             return results;
         }
 
+        /**
+         * publishes the results of the seach
+         * @param charSequence what the user types into the search bar
+         * @param filterResults the results based on the filter
+         */
         @Override
         protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
 

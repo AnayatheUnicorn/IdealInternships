@@ -55,11 +55,14 @@ public class StudentSearchFragment extends Fragment implements SearchView.OnQuer
         internshipsList = new ArrayList<Internship>();
         internshipFull = new ArrayList<Internship>();
 
-        // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Internships");
+        internshipsList = new ArrayList<Internship>();
+        internshipFull = new ArrayList<Internship>();
+
 
         Log.d("database", "got");
+
 
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
@@ -67,12 +70,12 @@ public class StudentSearchFragment extends Fragment implements SearchView.OnQuer
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                for(DataSnapshot ds: dataSnapshot.getChildren()){
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     Internship i = ds.getValue(Internship.class);
                     internshipsList.add(i);
                     internshipFull.add(i);
                     adapter.notifyDataSetChanged();
-                    Log.d("internship",internshipsList.toString());
+                    Log.d("searching", "notify" + internshipsList.toString());
                 }
 
             }
@@ -84,39 +87,33 @@ public class StudentSearchFragment extends Fragment implements SearchView.OnQuer
             }
         });
 
-
-
-        //recycler = v.findViewById(R.id.searchinternshipsRecyclerView);
+        recycler = v.findViewById(R.id.searchInternshipsRecyclerView);
         layoutManager = new LinearLayoutManager(getContext());
         adapter = new CardViewAdapterSearch(internshipsList, internshipFull);
         recycler.setLayoutManager(layoutManager);
         recycler.setAdapter(adapter);
 
-        //searchView = v.findViewById(R.id.studentSearchView);
-        //searchView.setOnQueryTextListener();
-
-
         return v;
     }
 
+   @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
+
         inflater.inflate(R.menu.search_menu, menu);
         MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setOnQueryTextListener(this);
-
         super.onCreateOptionsMenu(menu, inflater);
     }
 
-
     @Override
     public boolean onMenuItemActionExpand(MenuItem menuItem) {
-        return false;
+        return true;
     }
 
     @Override
     public boolean onMenuItemActionCollapse(MenuItem menuItem) {
-        return false;
+        return true;
     }
 
     @Override
@@ -126,13 +123,14 @@ public class StudentSearchFragment extends Fragment implements SearchView.OnQuer
 
     @Override
     public boolean onQueryTextChange(String s) {
+        Log.d("searching","text change");
         adapter.getFilter().filter(s);
+        adapter.notifyDataSetChanged();
+        Log.d("searching","text change successful");
         return false;
     }
 
-    private void resetSearch(){
-        internshipsList = new ArrayList<Internship>(internshipFull);
-    }
+
 }
 
 

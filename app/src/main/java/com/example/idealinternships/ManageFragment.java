@@ -24,13 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class ManageFragment extends Fragment {
-    /**
-     * Opens the manage internships company page after clicking on this page in the bottom navigation bar
-     * @param inflater inflater
-     * @param conatiner the part of the screen above the navigation bar
-     * @param savedInsatnceState the app's state
-     * @return the manage interships view
-     */
+
 
     private View v;
     private RecyclerView recycler;
@@ -38,6 +32,13 @@ public class ManageFragment extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<Internship> internshipsList;
 
+    /**
+     * Opens the manage internships company page after clicking on this page in the bottom navigation bar
+     * @param inflater inflater
+     * @param conatiner the part of the screen above the navigation bar
+     * @param savedInsatnceState the app's state
+     * @return the manage internships view
+     */
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup conatiner, @Nullable Bundle savedInsatnceState){
@@ -54,6 +55,10 @@ public class ManageFragment extends Fragment {
 
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
+            /**
+             * Gets internships from Firebase and puts tem into an array list
+             * @param dataSnapshot
+             */
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
@@ -66,6 +71,10 @@ public class ManageFragment extends Fragment {
                 }
             }
 
+            /**
+             * Indicates an error in accessing Firebase
+             * @param error error
+             */
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value

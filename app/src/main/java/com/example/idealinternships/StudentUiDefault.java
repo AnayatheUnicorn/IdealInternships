@@ -13,7 +13,6 @@ public class StudentUiDefault extends AppCompatActivity {
 
     /**
      * Opens the student interface
-     *
      * @param savedInstanceState the app's state
      */
     @Override
