@@ -1,9 +1,11 @@
 package com.example.idealinternships;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -26,6 +28,7 @@ public class CardViewAdapterSearch extends RecyclerView.Adapter<CardViewAdapterS
         public ImageView internshipPicView;
         public TextView nameTextView;
         public TextView descriptionTextView;
+        public Button seeMoreButton;
 
         public CardViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -52,11 +55,13 @@ public class CardViewAdapterSearch extends RecyclerView.Adapter<CardViewAdapterS
 
     @Override
     public void onBindViewHolder(@NonNull CardViewHolder holder, int position) {
-        Internship i = internships.get(position);
+        final Internship i = internships.get(position);
 
         holder.internshipPicView.setImageResource(i.getImageResource());
         holder.nameTextView.setText(i.getName());
         holder.descriptionTextView.setText(i.getInternshipDescription());
+
+
     }
 
     @Override
