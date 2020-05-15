@@ -318,27 +318,6 @@
                 android:inputType="textPersonName" />
 
             <TextView
-                android:id="@+id/pictureLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/picturesStr"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/internshipPic"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/uploadAPhotoStr"
-                app:srcCompat="@drawable/ic_file_upload_black_24dp" />
-
-            <Button
-                android:id="@+id/uploadPictureButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/uploadAPhotoStr" />
-
-            <TextView
                 android:id="@+id/deadlineLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
