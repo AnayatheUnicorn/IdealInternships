@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "431056943700-0nmb9l1je4ph72afh9emjl7ne8lraaqh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.idealinternships",
+            "certificate_hash": "cc9d27201bdf3f2ab828ba1214d69156d5137752"
+          }
+        },
+        {
           "client_id": "431056943700-hq2rgneu2rtsf3vs6uaa4tm5rc62qvov.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -83,6 +83,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToCompanyRegister(View v) {
+        Intent intent = new Intent(this, Register.class);
+        startActivity(intent);
+    }
 
+
+    public void goToCompanyLogin(View v) {
+        Intent intent = new Intent(this, Login.class);
+        startActivity(intent);
+    }
 
 }

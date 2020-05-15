@@ -193,5 +193,12 @@
         <item>N/A</item>
     </string-array>
 
+    <string name="createAcc">Create New Account</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="alreadyHaveAcc">Already have an account? Click here to login.</string>
+    <string name="Login">Login</string>
+    <string name="newHere">New here? Click here to make an account.</string>
 
 </resources>

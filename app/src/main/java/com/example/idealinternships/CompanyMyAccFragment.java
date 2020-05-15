@@ -3,16 +3,22 @@
  */
 package com.example.idealinternships;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class CompanyMyAccFragment extends Fragment {
+import com.google.firebase.auth.FirebaseAuth;
+
+public class CompanyMyAccFragment extends Fragment implements View.OnClickListener {
+
+    private View v;
 
     /**
      * Open the my account page for companies when clicked on from the bottom navigation bar
@@ -24,8 +30,17 @@ public class CompanyMyAccFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInsatnceState){
-        return inflater.inflate(R.layout.company_my_acc_fragment ,container,false);
+        v=inflater.inflate(R.layout.company_my_acc_fragment ,container,false);
+        Button logoutButton = v.findViewById(R.id.logoutCompanyButton);
+        logoutButton.setOnClickListener(this);
+        return v;
     }
 
-    
+
+    @Override
+    public void onClick(View view) {
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(getContext(),Login.class));
+        getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
+    }
 }

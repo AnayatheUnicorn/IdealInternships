@@ -42,6 +42,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/companyLabel" />
 
+    <Button
+        android:id="@+id/goToCompanyRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="goToCompanyRegister"
+        android:text="go to company register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goToCompanyInfo" />
+
+    <Button
+        android:id="@+id/goToCompnayLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="goToCompanyLogin"
+        android:text="go to company login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goToCompanyRegister" />
+
+    <Button
+        android:id="@+id/goToMyAccCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="goToMyAccCompanyPage"
+        android:text="@string/goToMyAccCompany"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goToCompnayLogin" />
+
     <TextView
         android:id="@+id/studentLabel"
         android:layout_width="wrap_content"
@@ -63,17 +96,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/studentLabel" />
-
-    <Button
-        android:id="@+id/goToMyAccCompany"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:onClick="goToMyAccCompanyPage"
-        android:text="@string/goToMyAccCompany"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goToCompanyInfo" />
 
     <Button
         android:id="@+id/goToStudentInterface"
