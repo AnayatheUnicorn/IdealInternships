@@ -1,10 +1,18 @@
 package com.example.idealinternships;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,6 +22,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,13 +32,12 @@ import java.util.Date;
 
 public class UploadInternship extends AppCompatActivity {
     private static final int PERMISSION_REQUEST = 0;
+    private static final int RESULT_LOAD_IMAGE = 0;
     private Date applicationDeadline;
     private Date startDate;
     private Date endDate;
     private CheckBox[] racesArray;
     private CheckBox[] fieldsArray;
-    ImageView internshipPic;
-    Button uploadPictureButton;
 
 
     /**
@@ -101,18 +109,14 @@ public class UploadInternship extends AppCompatActivity {
                 endDate = new Date(year-1900, month, dayOfMonth);
             }
         });
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST);
+        }
 
-        if(Build.VERSION.SDK_INT>Build.VERSION_CODES.M)
-        internshipPic = (ImageView) findViewById(R.id.internshipPic);
-        uploadPictureButton = (Button) findViewById(R.id.uploadPictureButton);
 
-        uploadPictureButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
     }
+
 
     /**
      * Saves information input on the Upload Internship screen in a new internship object
@@ -240,7 +244,6 @@ public class UploadInternship extends AppCompatActivity {
         DatabaseReference iRef = myRef.child(i.getName());
         iRef.setValue(i);
 
-
-
     }
+
 }
