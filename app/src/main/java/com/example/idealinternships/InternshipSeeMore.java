@@ -19,9 +19,6 @@ public class InternshipSeeMore extends AppCompatActivity {
 
         Internship i = new Internship();
 
-        ImageView iPic = findViewById(R.id.internshipImage);
-        iPic.setImageResource(getIntent().getIntExtra("internship image", 0));
-
         TextView iName = findViewById(R.id.internshipNameTextView);
         iName.setText(getIntent().getStringExtra("internship name"));
 

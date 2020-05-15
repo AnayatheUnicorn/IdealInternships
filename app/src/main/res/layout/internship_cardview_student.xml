@@ -8,7 +8,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/seeMoreButton"
@@ -16,38 +16,31 @@
             android:layout_height="55dp"
             android:layout_marginStart="468dp"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
             android:text="@string/seeMoreStr"
             android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
 
-        <ImageView
-            android:id="@+id/internshipPic"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_account_circle_black_24dp" />
-
         <TextView
             android:id="@+id/descriptionTextView"
-            android:layout_width="395dp"
-            android:layout_height="84dp"
-            android:layout_marginStart="175dp"
+            android:layout_width="500dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="10dp"
             android:text="Description"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/internshipPic"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/internshipNameTextView" />
 
         <TextView
             android:id="@+id/internshipNameTextView"
-            android:layout_width="403dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="175dp"
+            android:layout_width="500dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:text="Internship Name"

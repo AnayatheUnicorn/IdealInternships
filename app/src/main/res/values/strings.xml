@@ -200,5 +200,6 @@
     <string name="alreadyHaveAcc">Already have an account? Click here to login.</string>
     <string name="Login">Login</string>
     <string name="newHere">New here? Click here to make an account.</string>
+    <string name="logOutStr">Log Out</string>
 
 </resources>

@@ -67,7 +67,6 @@ public class ManageFragment extends Fragment {
                     Internship i = ds.getValue(Internship.class);
                     internshipsList.add(i);
                     adapter.notifyDataSetChanged();
-                    //Log.d("manage class",i.getName());
                 }
             }
 

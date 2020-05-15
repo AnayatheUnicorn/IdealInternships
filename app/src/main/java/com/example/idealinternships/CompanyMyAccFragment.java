@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -31,7 +32,16 @@ public class CompanyMyAccFragment extends Fragment implements View.OnClickListen
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInsatnceState){
         v=inflater.inflate(R.layout.company_my_acc_fragment ,container,false);
-        Button logoutButton = v.findViewById(R.id.logoutCompanyButton);
+
+        TextView cName = v.findViewById(R.id.companyMyAccNameText);
+
+        TextView cBio = v.findViewById(R.id.companyMyAccDescriptionText);
+
+        TextView cLocation = v.findViewById(R.id.companyMyAccLocation);
+
+        TextView cLink = v.findViewById(R.id.companyMyAccLink);
+
+        Button logoutButton = v.findViewById(R.id.logOutButton);
         logoutButton.setOnClickListener(this);
         return v;
     }

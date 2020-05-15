@@ -24,7 +24,6 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.CardVi
 
     public static class CardViewHolder extends RecyclerView.ViewHolder{
 
-        public ImageView internshipPicView;
         public TextView nameTextView;
         public TextView descriptionTextView;
         public Button seeMoreButton;
@@ -35,7 +34,6 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.CardVi
          */
         public CardViewHolder(@NonNull View itemView) {
             super(itemView);
-            internshipPicView = itemView.findViewById(R.id.internshipPic);
             nameTextView = itemView.findViewById(R.id.internshipNameTextView);
             descriptionTextView = itemView.findViewById(R.id.descriptionTextView);
             seeMoreButton = itemView.findViewById(R.id.seeMoreButton);
@@ -69,7 +67,6 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.CardVi
     public void onBindViewHolder(@NonNull CardViewHolder holder, int position) {
         final Internship i = internships.get(position);
 
-        holder.internshipPicView.setImageResource(i.getImageResource());
         holder.nameTextView.setText(i.getName());
         holder.descriptionTextView.setText(i.getInternshipDescription());
 
@@ -77,7 +74,6 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.CardVi
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), InternshipSeeMore.class);
-                intent.putExtra("internship image", i.getImageResource());
                 intent.putExtra("internship name", i.getName());
                 intent.putExtra("internship company", i.getCompany().getName());
                 intent.putExtra("internship fields", i.getFields());
