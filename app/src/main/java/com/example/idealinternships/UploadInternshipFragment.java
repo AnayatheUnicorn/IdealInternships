@@ -16,9 +16,13 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Date;
 
@@ -26,6 +30,7 @@ public class UploadInternshipFragment extends Fragment implements View.OnClickLi
     private Date applicationDeadline;
     private Date startDate;
     private Date endDate;
+    private Company company;
     private CheckBox[] racesArray;
     private CheckBox[] fieldsArray;
     private View v;
@@ -119,8 +124,46 @@ public class UploadInternshipFragment extends Fragment implements View.OnClickLi
         Log.d(TAG, "In id.postButton onClick() method");
 
         //Save the company hosting the internship
-        EditText companyNameField = v.findViewById(R.id.companyNameText);
-        Company company = new Company(companyNameField.getText().toString());
+        TextView companyNameField = v.findViewById(R.id.companyMyAccNameText);
+        final Company[] company = {new Company(companyNameField.getText().toString())};
+
+
+        // Write a message to the database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Company");
+
+        Log.d("database", "got");
+
+        // Read from the database
+        myRef.addValueEventListener(new ValueEventListener() {
+            /**
+             * Gets internships from Firebase and puts tem into an array list
+             * @param dataSnapshot
+             */
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                for(DataSnapshot ds: dataSnapshot.getChildren()){
+                    Company c = ds.getValue(Company.class);
+                    if (c.getName().equals(company[0].getName())) {
+                        company[0] = c;
+                    }
+                }
+            }
+
+            /**
+             * Indicates an error in accessing Firebase
+             * @param error error
+             */
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("MainActivity", "Failed to read value.", error.toException());
+            }
+        });
+
+
         Log.d(TAG, "Company Name Entered: " + companyNameField.getText().toString());
 
         // Save the name of the internship
@@ -245,14 +288,14 @@ public class UploadInternshipFragment extends Fragment implements View.OnClickLi
         Log.d(TAG, "Description Entered: " + description);
 
         Log.d(TAG, "Constructing a new Internship");
-        Internship i = new Internship(name, applicationDeadline, startDate, endDate, company, cost,
+        Internship i = new Internship(name, applicationDeadline, startDate, endDate, company[0], cost,
             minAge, maxAge, minGrade, maxGrade, targetGender, targetRaces,
             militaryExperience, paid, fields, location, targetIncome,
             preReqs, appLink, description);
 
         Log.d(TAG, "Saving Internship to Firebase ...");
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Internships");
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("Internships");
         DatabaseReference iRef = myRef.child(i.getName());
         iRef.setValue(i);
         Log.d(TAG, "Done saving Internship to Firebase");
