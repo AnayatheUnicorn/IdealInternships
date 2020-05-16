@@ -13,6 +13,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -22,10 +23,14 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Date;
 
@@ -33,6 +38,7 @@ import java.util.Date;
 public class UploadInternship extends AppCompatActivity {
     private static final int PERMISSION_REQUEST = 0;
     private static final int RESULT_LOAD_IMAGE = 0;
+    private Company company;
     private Date applicationDeadline;
     private Date startDate;
     private Date endDate;
@@ -129,8 +135,9 @@ public class UploadInternship extends AppCompatActivity {
         String name = nameField.getText().toString();
 
         //Save the company hosting the internship
-        EditText companyNameField = findViewById(R.id.companyNameText);
-        Company company = new Company(companyNameField.getText().toString());
+        String companyName = "";
+
+
 
         //Save the cost of the internship
         EditText costField = findViewById(R.id.costText);
