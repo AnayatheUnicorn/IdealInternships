@@ -48,7 +48,7 @@ public class Register extends AppCompatActivity {
         mRegisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = mEmail.getText().toString().trim();
+                final String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
 
                 if(TextUtils.isEmpty(email)){
@@ -73,7 +73,8 @@ public class Register extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(Register.this,"User created",Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(getApplicationContext(), CompanyMyAccActivity.class);
+                            Intent intent = new Intent(getApplicationContext(), CompanyEnterInfoActivity.class);
+                            intent.putExtra("company email", email);
                             startActivity(intent);
                         }
                         else{

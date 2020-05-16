@@ -43,7 +43,11 @@ public class CompanyEnterInfoActivity extends AppCompatActivity {
         EditText companyLocationRaw = findViewById(R.id.companyLocationEditable);
         AutoCompleteTextView companyLinkRaw = findViewById(R.id.companyLinkEditable);
         ImageView companyPFPRaw = findViewById(R.id.companyChoosePFP);
-        c = new Company(companyNameRaw.getText().toString(),companyDescriptionRaw.getText().toString(),companyLocationRaw.getText().toString(),companyLinkRaw.getText().toString());
+
+        String email = getIntent().getStringExtra("company email");
+
+        c = new Company(companyNameRaw.getText().toString(),companyDescriptionRaw.getText().toString(),companyLocationRaw.getText().toString(),
+                companyLinkRaw.getText().toString(), email);
 
        // DatabaseReference usersRef = ref.child("users");
 

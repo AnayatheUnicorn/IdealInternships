@@ -5,6 +5,7 @@ package com.example.idealinternships;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.firebase.auth.FirebaseAuth;
+
+import static android.content.Intent.getIntent;
 
 public class CompanyMyAccFragment extends Fragment implements View.OnClickListener {
 
@@ -33,13 +36,25 @@ public class CompanyMyAccFragment extends Fragment implements View.OnClickListen
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInsatnceState){
         v=inflater.inflate(R.layout.company_my_acc_fragment ,container,false);
 
+        Bundle bundle = getArguments();
+        if(bundle == null){
+            Log.d("bundle", "is null");
+        }
+        else{
+            Log.d("bundle", "isn't null");
+        }
+
         TextView cName = v.findViewById(R.id.companyMyAccNameText);
+        //cName.setText(name);
 
         TextView cBio = v.findViewById(R.id.companyMyAccDescriptionText);
+        //cBio.setText(getActivity().getIntent().getStringExtra("company bio"));
 
         TextView cLocation = v.findViewById(R.id.companyMyAccLocation);
+        //cLocation.setText(getActivity().getIntent().getStringExtra("company location"));
 
         TextView cLink = v.findViewById(R.id.companyMyAccLink);
+        //cLink.setText(getActivity().getIntent().getStringExtra("company link"));
 
         Button logoutButton = v.findViewById(R.id.logOutButton);
         logoutButton.setOnClickListener(this);
