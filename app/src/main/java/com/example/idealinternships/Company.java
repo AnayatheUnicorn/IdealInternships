@@ -11,6 +11,7 @@ public class Company {
 	private String bio;
 	private String location;
 	private String link;
+	private String email;
 	
 	/**
 	 * Constructs a company with no name, bio, location, or link 
@@ -20,6 +21,7 @@ public class Company {
 		bio = "";
 		location = "";
 		link = "";
+		email = "";
 	}
 	
 	/**
@@ -31,6 +33,7 @@ public class Company {
 		bio = "";
 		location = "";
 		link = "";
+		email = "";
 	}
 	
 	/**
@@ -40,11 +43,12 @@ public class Company {
 	 * @param location the company's location 
 	 * @param link the company's link 
 	 */
-	public Company(String name, String bio, String location, String link) {
+	public Company(String name, String bio, String location, String link, String email) {
 		this.name = name;
 		this.bio = bio;
 		this.location = location;
 		this.link = link;
+		this.email = email;
 	}
 
 	/**
@@ -118,6 +122,18 @@ public class Company {
 	public void setLink(String link) {
 		this.link = link;
 	}
+
+	/**
+	 * Get's the company's email
+	 * @return the email
+	 */
+	public String getEmail(){return email;}
+
+	/**
+	 * Sets the company's email to a new email
+	 * @param email the new email
+	 */
+	public void setEmail(String email){this.email = email;}
 
 	/**
 	 * Compares equality with a company object

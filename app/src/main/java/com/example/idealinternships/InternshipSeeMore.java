@@ -17,8 +17,6 @@ public class InternshipSeeMore extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_internship_see_more);
 
-        Internship i = new Internship();
-
         TextView iName = findViewById(R.id.internshipNameTextView);
         iName.setText(getIntent().getStringExtra("internship name"));
 
