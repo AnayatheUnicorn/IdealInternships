@@ -42,7 +42,7 @@ public class CompanyEnterInfoActivity extends AppCompatActivity {
         EditText companyDescriptionRaw = findViewById(R.id.companyBioEditable);
         EditText companyLocationRaw = findViewById(R.id.companyLocationEditable);
         AutoCompleteTextView companyLinkRaw = findViewById(R.id.companyLinkEditable);
-        ImageView companyPFPRaw = findViewById(R.id.companyChoosePFP);
+       // ImageView companyPFPRaw = findViewById(R.id.companyChoosePFP);
 
         String email = getIntent().getStringExtra("company email");
 

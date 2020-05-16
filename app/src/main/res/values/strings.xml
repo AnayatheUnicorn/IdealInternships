@@ -200,6 +200,10 @@
     <string name="alreadyHaveAcc">Already have an account? Click here to login.</string>
     <string name="Login">Login</string>
     <string name="newHere">New here? Click here to make an account.</string>
+    <string name="fillAll">Be sure to fill all fields. Use N/A if not applicable.</string>
+    <string name="welcomeText">Connecting innovative companies with motivated students!</string>
+    <string name="imAComp">I\'m a Company</string>
+    <string name="imAStu">I\'m a student</string>
     <string name="logOutStr">Log Out</string>
 
 </resources>

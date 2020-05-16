@@ -10,11 +10,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -27,6 +32,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.CardVi
         public TextView nameTextView;
         public TextView descriptionTextView;
         public Button seeMoreButton;
+        public ImageButton trashButton;
 
         /**
          * Sets values to each field in the card
@@ -37,6 +43,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.CardVi
             nameTextView = itemView.findViewById(R.id.internshipNameTextView);
             descriptionTextView = itemView.findViewById(R.id.descriptionTextView);
             seeMoreButton = itemView.findViewById(R.id.seeMoreButton);
+            trashButton = itemView.findViewById(R.id.trashButton);
         }
     }
 
@@ -69,6 +76,16 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.CardVi
 
         holder.nameTextView.setText(i.getName());
         holder.descriptionTextView.setText(i.getInternshipDescription());
+
+       holder.trashButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference dr = FirebaseDatabase.getInstance().getReference("Internships").child(i.getName());
+                dr.removeValue();
+                notifyDataSetChanged();
+                Toast.makeText(view.getContext(),"Refresh by going to any other screen",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         holder.seeMoreButton.setOnClickListener(new View.OnClickListener() {
             @Override

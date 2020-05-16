@@ -16,6 +16,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
+import android.widget.Toast;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -217,7 +218,7 @@ public class UploadInternshipFragment extends Fragment implements View.OnClickLi
             if(check.isChecked())
             targetRaces += check.getText() + ", ";
         }
-        targetRaces = targetRaces.substring(0,targetRaces.lastIndexOf(','));
+        //targetRaces = targetRaces.substring(0,targetRaces.lastIndexOf(','));
 
         //Save military experience
         Switch militarySwitch = v.findViewById(R.id.militarySwitch);
@@ -260,7 +261,7 @@ public class UploadInternshipFragment extends Fragment implements View.OnClickLi
             if(check.isChecked())
             fields += check.getText() + ", ";
         }
-        fields = fields.substring(0,fields.lastIndexOf(','));
+        //fields = fields.substring(0,fields.lastIndexOf(','));
 
         //Save the location
         EditText locationField = v.findViewById(R.id.locationText);
@@ -299,6 +300,9 @@ public class UploadInternshipFragment extends Fragment implements View.OnClickLi
         DatabaseReference iRef = myRef.child(i.getName());
         iRef.setValue(i);
         Log.d(TAG, "Done saving Internship to Firebase");
+        Toast.makeText(getActivity(),"Internship posted. Clear fields by going to any other screen.",Toast.LENGTH_SHORT).show();
+
+
     }  // end onClick() method
 }
 

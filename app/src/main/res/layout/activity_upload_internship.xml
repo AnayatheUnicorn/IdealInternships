@@ -32,6 +32,13 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fillAll"
+                android:textAlignment="center" />
+
+            <TextView
                 android:id="@+id/companyNameLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -524,7 +531,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="postInternship"
-                android:text="@string/postStr" />
+                android:text="@string/postStr"
+                tools:visibility="visible" />
 
         </LinearLayout>
     </ScrollView>
