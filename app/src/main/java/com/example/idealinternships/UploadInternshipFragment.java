@@ -125,47 +125,9 @@ public class UploadInternshipFragment extends Fragment implements View.OnClickLi
         Log.d(TAG, "In id.postButton onClick() method");
 
         //Save the company hosting the internship
-        TextView companyNameField = v.findViewById(R.id.companyMyAccNameText);
-        final Company[] company = {new Company(companyNameField.getText().toString())};
+        TextView companyNameField = v.findViewById(R.id.companyNameText);
+        company = new Company(companyNameField.getText().toString());
 
-
-        // Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Company");
-
-        Log.d("database", "got");
-
-        // Read from the database
-        myRef.addValueEventListener(new ValueEventListener() {
-            /**
-             * Gets internships from Firebase and puts tem into an array list
-             * @param dataSnapshot
-             */
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                for(DataSnapshot ds: dataSnapshot.getChildren()){
-                    Company c = ds.getValue(Company.class);
-                    if (c.getName().equals(company[0].getName())) {
-                        company[0] = c;
-                    }
-                }
-            }
-
-            /**
-             * Indicates an error in accessing Firebase
-             * @param error error
-             */
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w("MainActivity", "Failed to read value.", error.toException());
-            }
-        });
-
-
-        Log.d(TAG, "Company Name Entered: " + companyNameField.getText().toString());
 
         // Save the name of the internship
         EditText nameField = v.findViewById(R.id.inputName);
@@ -289,14 +251,14 @@ public class UploadInternshipFragment extends Fragment implements View.OnClickLi
         Log.d(TAG, "Description Entered: " + description);
 
         Log.d(TAG, "Constructing a new Internship");
-        Internship i = new Internship(name, applicationDeadline, startDate, endDate, company[0], cost,
+        Internship i = new Internship(name, applicationDeadline, startDate, endDate, company, cost,
             minAge, maxAge, minGrade, maxGrade, targetGender, targetRaces,
             militaryExperience, paid, fields, location, targetIncome,
             preReqs, appLink, description);
 
         Log.d(TAG, "Saving Internship to Firebase ...");
-        database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("Internships");
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Internships");
         DatabaseReference iRef = myRef.child(i.getName());
         iRef.setValue(i);
         Log.d(TAG, "Done saving Internship to Firebase");
